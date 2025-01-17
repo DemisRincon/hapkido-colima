@@ -1,15 +1,17 @@
 export interface Theme {
-  light: string;
-  dark: string;
-  snow: string;
-  lightGreen: string;
+  darkBlue: string;
   lightBlue: string;
+  grey: string;
+  bone: string;
+  black: string;
+  white: string;
 }
 
 export const defaultTheme: Theme = {
-  light: "#f8f9fa",
-  dark: "#093a3e",
-  snow: "#f7f0f0",
-  lightGreen: "#18a999",
-  lightBlue: "#3aafb9",
+  darkBlue: "#2A3659",
+  lightBlue: "#117DBF",
+  grey: "#A6A5A4",
+  bone: "#F2F2F2",
+  black: "#0D0D0D",
+  white: "#FFFFFF",
 };

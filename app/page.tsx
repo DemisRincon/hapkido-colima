@@ -1,17 +1,17 @@
 import { Fragment } from "react";
-import AboutMe from "./aboutMe";
-import Services from "./services";
-import Contact from "./contact";
-import Projects from "./projects";
+import School from "./school";
+import FreeClass from "./freeClass";
+import Testimonials from "./testimonials";
+import Facebook from "./facebook";
 import Home from "./home";
 const Page = () => {
   return (
     <Fragment>
       <Home />
-      <AboutMe />
-      <Services />
-      <Projects />
-      <Contact />
+      <School />
+      <FreeClass />
+      <Facebook />
+      <Testimonials />
     </Fragment>
   );
 };
