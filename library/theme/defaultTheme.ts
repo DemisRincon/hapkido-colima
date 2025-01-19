@@ -20,6 +20,16 @@ export interface Theme {
     fontHalyardDisplay: string;
     fontNimbusSansCondensed: string;
   };
+  fontSizes: {
+    h1: string;
+    h2: string;
+    h3: string;
+    h4: string;
+    h5: string;
+    h6: string;
+    body: string;
+    small: string;
+  };
   sizing: {
     pageSizerWidth: string;
     pageSizerWidthLarge: string;
@@ -50,6 +60,16 @@ export const defaultTheme: Theme = {
     fontAktivGroteskExtended: "aktiv-grotesk-extended",
     fontHalyardDisplay: "halyard-display",
     fontNimbusSansCondensed: "nimbus-sans-condensed",
+  },
+  fontSizes: {
+    h1: "5.75rem",
+    h2: "2.441rem",
+    h3: "1.953rem",
+    h4: "1.563rem",
+    h5: "1.25rem",
+    h6: "1rem",
+    body: "1rem",
+    small: "0.8rem",
   },
   sizing: {
     pageSizerWidth: "1230px",

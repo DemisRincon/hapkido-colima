@@ -25,10 +25,8 @@ const Container = styled(motion.header)`
 export const GradientEffect = styled(motion.div)`
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(255, 255, 255, 0.6) 40%,
-    rgba(255, 255, 255, 0.4) 80%,
-    rgba(255, 255, 255, 0.3) 90%,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.1) 80%,
     rgba(0, 0, 0, 0) 100%
   );
   bottom: 0;
@@ -97,12 +95,6 @@ const Header = () => {
     [0, 1]
   );
 
-  const color = useTransform(
-    scrollYProgress,
-    [0, percentageTransition],
-    ["#000", "white"]
-  );
-
   return (
     <Container
       initial={{ opacity: 0 }}
@@ -114,19 +106,19 @@ const Header = () => {
       {logoSrc && <Logo src={logoSrc} alt="logo" />}
       <Nav>
         <NavaLink href="/">
-          <StyledText style={{ color }}>Home</StyledText>
+          <StyledText>Home</StyledText>
         </NavaLink>
         <NavaLink href="/about">
-          <StyledText style={{ color }}>Nosotros</StyledText>
+          <StyledText>Nosotros</StyledText>
         </NavaLink>
         <NavaLink href="/gallery">
-          <StyledText style={{ color }}>Galeria</StyledText>
+          <StyledText>Galeria</StyledText>
         </NavaLink>
         <NavaLink href="/location">
-          <StyledText style={{ color }}>Ubicación</StyledText>
+          <StyledText>Ubicación</StyledText>
         </NavaLink>
         <NavaLink href="/contact">
-          <StyledText style={{ color }}>Contacto</StyledText>
+          <StyledText>Contacto</StyledText>
         </NavaLink>
       </Nav>
     </Container>
