@@ -1,59 +1,49 @@
 "use client";
-import { ReactNode } from "react";
-import { breakpoints } from "@/library/GlobalStyles";
+import logo from "@/library/images/logo.png";
 import Link from "next/link";
+import { useState } from "react";
+
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  height: 150px;
+  background-color: #242b35;
 `;
 
-const TitleContainer = styled.div`
+const Logo = styled.img`
+  height: 90%;
+  width: auto;
+`;
+
+const Nav = styled.nav`
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  max-width: 300px;
+  width: 30%;
 `;
 
-const Title = styled.h1`
-  font-size: 1.5rem;
-`;
-
-const NavigatorContainer = styled.div`
-  display: none;
-  @media (min-width: ${breakpoints.desktop}) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 400px;
-  }
+const NavaLink = styled(Link)`
+  text-decoration: none;
+  color: ${(props) => props.theme.colors.white};
+  font: ${(props) => props.theme.fonts.fontAktivGroteskExtended};
 `;
 
 const Header = () => {
-  const navigationLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "¿Quiénes somos?" },
-    { href: "/location", label: "Ubicacón" },
-    { href: "/gallery", label: "Galería" },
-    { href: "/contact", label: "Contactanos" },
-  ];
+  const [logoSrc] = useState(logo.src);
+
   return (
-    <Container>
-      <TitleContainer>
-        <Title>Hapkido defensa personal</Title>
-      </TitleContainer>
-      <NavigatorContainer>
-        {navigationLinks.map((link) => (
-          <Link key={link.href} href={link.href}>
-            {link.label}
-          </Link>
-        ))}
-      </NavigatorContainer>
+    <Container suppressHydrationWarning>
+      {logoSrc && <Logo src={logoSrc} alt="logo" />}
+      <Nav>
+        <NavaLink href="/">Home</NavaLink>
+        <NavaLink href="/about">About</NavaLink>
+        <NavaLink href="/projects">Projects</NavaLink>
+        <NavaLink href="/contact">Contact</NavaLink>
+      </Nav>
     </Container>
   );
 };
-
 export default Header;

@@ -1,3 +1,4 @@
+"use client";
 import { Fragment } from "react";
 import School from "./school";
 import FreeClass from "./freeClass";

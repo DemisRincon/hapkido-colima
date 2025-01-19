@@ -3,11 +3,12 @@ import { Metadata } from "next";
 import { MainLayout } from "@/components/styled";
 import Header from "./header";
 import GlobalThemeWrapper from "@/library/GlobalTheme";
+import GlobalStyles from "@/library/GlobalStyles";
 
 export const metadata: Metadata = {
-  title: "Demis Rincon Portfolio",
+  title: "Hapkido defensa personal",
   description:
-    "Demis Rincon Portfolio created with Next.js to showcase my work and skills.",
+    "Hapkido es un arte marcial coreano de defensa personal que combina técnicas de lucha y defensa personal.",
 };
 
 export default function RootLayout({
@@ -17,8 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/evw7bhx.css" />
+        <link rel="stylesheet" href="https://use.typekit.net/jcb1uhn.css" />
+      </head>
       <body>
         <StyledComponentsRegistry>
+          <GlobalStyles />
           <GlobalThemeWrapper>
             <MainLayout>
               <Header />

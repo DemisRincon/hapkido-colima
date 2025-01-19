@@ -1,5 +1,5 @@
 "use client";
-
+import { defaultTheme } from "./theme/defaultTheme";
 import { createGlobalStyle } from "styled-components";
 
 interface Breakpoints {
@@ -15,6 +15,23 @@ export const breakpoints: Breakpoints = {
 };
 
 const GlobalStyles = createGlobalStyle`
+*{
+
+  font-family:${defaultTheme.fonts.fontAktivGroteskExtended};
+}
+body{
+  padding: 0;
+  margin: 0;
+  font-family: ${defaultTheme.fonts.fontHalyardDisplay};
+}
+
+html {
+    scroll-snap-type: y proximity;
+  }
+
+h1 {
+    font-family: ${defaultTheme.fonts.fontNimbusSansCondensed};
+}
 
 `;
 
