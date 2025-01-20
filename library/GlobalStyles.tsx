@@ -98,8 +98,8 @@ h4 {
 }
 
 p{
-  font-weight: 400;
-  font-size: 1.5rem;
+  font-weight: 300;
+  font-size: 1.2rem;
   font-family: ${defaultTheme.fonts.paragraph};
   text-align: justify;
 }
