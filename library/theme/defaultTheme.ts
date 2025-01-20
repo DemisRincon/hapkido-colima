@@ -1,3 +1,5 @@
+import { Inter, Sigmar_One, Bowlby_One_SC, Lilita_One } from "next/font/google";
+
 export interface Theme {
   colors: {
     darkBlue: string;
@@ -16,6 +18,8 @@ export interface Theme {
     xxl: string;
   };
   fonts: {
+    hfonts: string;
+    navLink: string;
     fontAktivGroteskExtended: string;
     fontHalyardDisplay: string;
     fontNimbusSansCondensed: string;
@@ -39,11 +43,32 @@ export interface Theme {
   };
 }
 
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "700"],
+  style: ["italic", "normal"],
+});
+
+const lilitaOne = Lilita_One({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
+  style: ["normal"],
+});
+
+const bowlbyOneSC = Bowlby_One_SC({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
+  style: ["normal"],
+});
+
 export const defaultTheme: Theme = {
   colors: {
     darkBlue: "#2A3659",
     lightBlue: "#117DBF",
-    grey: "#A6A5A4",
+    grey: "#e9e7e4",
     bone: "#F2F2F2",
     black: "#0D0D0D",
     white: "#FFFFFF",
@@ -57,15 +82,17 @@ export const defaultTheme: Theme = {
     xxl: "1400px",
   },
   fonts: {
-    fontAktivGroteskExtended: "aktiv-grotesk-extended",
-    fontHalyardDisplay: "halyard-display",
-    fontNimbusSansCondensed: "nimbus-sans-condensed",
+    hfonts: lilitaOne.style.fontFamily,
+    navLink: inter.style.fontFamily,
+    fontAktivGroteskExtended: "p22-numismatic, sans-serif",
+    fontHalyardDisplay: "p22-numismatic, sans-serif",
+    fontNimbusSansCondensed: "p22-numismatic, sans-serif",
   },
   fontSizes: {
     h1: "5.75rem",
-    h2: "2.441rem",
-    h3: "1.953rem",
-    h4: "1.563rem",
+    h2: "4rem",
+    h3: "3rem",
+    h4: "2rem",
     h5: "1.25rem",
     h6: "1rem",
     body: "1rem",

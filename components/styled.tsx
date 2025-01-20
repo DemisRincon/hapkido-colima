@@ -16,3 +16,8 @@ export const PageLayout = styled.div`
   height: 100vh;
   border: 1px solid red;
 `;
+
+export const Separator = styled.div`
+  width: 100%;
+  height: 100px;
+`;

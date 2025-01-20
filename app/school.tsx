@@ -21,8 +21,7 @@ const School = () => {
   }
   return (
     <WrapperFadeOnView>
-      Escuela
-      <InfiniteCarouselMotion images={images} />
+      <InfiniteCarouselMotion images={images} title="Escuela" />
     </WrapperFadeOnView>
   );
 };

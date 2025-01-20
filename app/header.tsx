@@ -65,12 +65,11 @@ const StyledLink = styled(Link)`
   margin: 0 15px;
   text-decoration: none;
   color: ${(props) => props.theme.colors.white};
-  font: ${(props) => props.theme.fonts.fontAktivGroteskExtended};
 `;
 
 const StyledText = styled(motion.span)`
   color: ${(props) => props.theme.colors.white};
-  font: ${(props) => props.theme.fonts.fontAktivGroteskExtended};
+  font-family: ${(props) => props.theme.fonts.navLink};
   font-weight: bold;
   font-size: 1.2rem;
 `;
