@@ -21,7 +21,14 @@ const Container = styled.div`
 `;
 
 const Pharagraph = styled.p`
-  max-width: 800px;
+  max-width: 90%;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    max-width: 800px;
+  }
+`;
+
+const H4 = styled.h4`
+  max-width: 80%;
 `;
 
 const SectionBanner: React.FC<SectionBannerProps> = ({
@@ -40,7 +47,7 @@ const SectionBanner: React.FC<SectionBannerProps> = ({
   return (
     <Container color={color}>
       <Separator />
-      {title && <h4>{title}</h4>}
+      {title && <H4>{title}</H4>}
       {contentResolved}
       <Separator />
     </Container>

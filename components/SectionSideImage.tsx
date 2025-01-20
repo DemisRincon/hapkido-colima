@@ -20,12 +20,17 @@ const Container = styled.div`
 
 const HeadSection = styled.div<{ $column?: boolean }>`
   display: flex;
-  flex-direction: ${(props) => (props.$column ? "column" : "row")};
-  justify-content: ${(props) =>
-    props.$column ? "flex-start" : "space-around"};
-  align-items: center;
   width: 100%;
-  height: ${(props) => (props.$column ? "auto" : "100vh")};
+  align-items: center;
+  flex-direction: column;
+  margin: 100px 0;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    flex-direction: ${(props) => (props.$column ? "column" : "row")};
+    justify-content: ${(props) =>
+      props.$column ? "flex-start" : "space-around"};
+    height: ${(props) => (props.$column ? "auto" : "100vh")};
+    margin: 0;
+  }
 `;
 
 const HeadImage = styled.img.attrs<{
@@ -37,8 +42,13 @@ const HeadImage = styled.img.attrs<{
     marginTop: $column ? "3rem" : "0",
   },
 }))`
-  height: 500px;
+  max-width: 90%;
+  height: auto;
   object-fit: contain;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    height: 500px;
+    width: auto;
+  }
 `;
 
 const SectionSideImage: React.FC<SectionSideImageProps> = ({

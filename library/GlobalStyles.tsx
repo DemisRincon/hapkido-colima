@@ -98,10 +98,14 @@ h4 {
 }
 
 p{
-  font-weight: 300;
-  font-size: 1.2rem;
   font-family: ${defaultTheme.fonts.paragraph};
   text-align: justify;
+  font-size: 1rem;
+  @media (min-width: ${defaultTheme.breakpoints.lg}) {
+    font-weight: 300;
+    font-size: 1.2rem;
+
+  }
 }
 
 `;
