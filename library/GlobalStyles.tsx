@@ -97,6 +97,13 @@ h4 {
   }
 }
 
+p{
+  font-weight: 400;
+  font-size: 1.5rem;
+  font-family: ${defaultTheme.fonts.paragraph};
+  text-align: justify;
+}
+
 `;
 
 export default GlobalStyles;

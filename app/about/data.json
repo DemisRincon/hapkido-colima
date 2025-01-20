@@ -1,0 +1,18 @@
+{
+    "section1": {
+        "title": "BIENVENIDO A HAPKIDO COLIMA"
+    },
+    "section2": {
+        "title": "HISTORIA DEL HAPKIDO",
+        "content": "Las técnicas de Hapkido deben su origen a diferentes Artes Marciales a través de la historia. Al tener una herencia tan rica, el Hapkido posee un gran arsenal técnico."
+    },
+    "section3": {
+        "title": "Do Ju Nim Ji Han Jae (Fundador del Hapkido)",
+        "content": [
+            "Do Ju Nim (Gran Maestro) Ji Han Jae nació en Andong Corea en 1936. Comenzó la práctica de las Artes Marciales con el G. M. Choi Yong Sul quien le enseñó el Arte Japonés denominado Yawara (Yu Kwon Sul). Do Ju Nim Ji es considerado uno de sus mejores estudiantes.",
+            "Do Ju Nim Ji comenzó su entrenamiento mental bajo las enseñanzas de un hombre conocido como el Taoísta Lee, del cual aprendió el uso del Bo, palo corto, el Tae Kyon, técnicas de pateo y meditación. Con todo esto y más, el Do Ju Nim Ji Han Jae creó el Hapkido.",
+            "Do Ju Nim Ji fue instructor de la mayoría de los Grandes Maestros de Hapkido de la actualidad, además de participar en diferentes películas. Durante su estancia en Hong Kong, Do Ju Nim Ji fue coreógrafo, así como entrenador personal de varias estrellas de las Artes Marciales, entre estos destacan Bruce Lee, Samo Hung (compañero de Jackie Chan), Angela Mao y Carter Wong (Big Trouble in Little China).",
+            "En 1984 Do Ju Nim Ji emigró a los Estados Unidos. En aquel tiempo el Maestro agregó más aspectos mentales y filosóficos al Hapkido, así como la palabra Sin Moo al Hapkido. “Sin” significa mente superior y “Moo” Arte Marcial. Por lo tanto “Sin Moo” significa “Armonía y Coordinación entre Mente, Cuerpo y Espíritu”"
+        ]
+    }
+}

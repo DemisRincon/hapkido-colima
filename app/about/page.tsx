@@ -1,3 +1,4 @@
+"use client";
 import { Fragment } from "react";
 import Characteristics from "./characteristics";
 import HapkidoForAll from "./hapkidoForAll";

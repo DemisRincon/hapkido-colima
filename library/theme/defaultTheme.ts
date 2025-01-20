@@ -1,4 +1,4 @@
-import { Inter, Sigmar_One, Bowlby_One_SC, Lilita_One } from "next/font/google";
+import { Inter, Lilita_One } from "next/font/google";
 
 export interface Theme {
   colors: {
@@ -20,6 +20,7 @@ export interface Theme {
   fonts: {
     hfonts: string;
     navLink: string;
+    paragraph: string;
     fontAktivGroteskExtended: string;
     fontHalyardDisplay: string;
     fontNimbusSansCondensed: string;
@@ -46,18 +47,11 @@ export interface Theme {
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "700"],
+  weight: ["100", "200", "300", "400", "700"],
   style: ["italic", "normal"],
 });
 
 const lilitaOne = Lilita_One({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400"],
-  style: ["normal"],
-});
-
-const bowlbyOneSC = Bowlby_One_SC({
   subsets: ["latin"],
   display: "swap",
   weight: ["400"],
@@ -84,6 +78,7 @@ export const defaultTheme: Theme = {
   fonts: {
     hfonts: lilitaOne.style.fontFamily,
     navLink: inter.style.fontFamily,
+    paragraph: inter.style.fontFamily,
     fontAktivGroteskExtended: "p22-numismatic, sans-serif",
     fontHalyardDisplay: "p22-numismatic, sans-serif",
     fontNimbusSansCondensed: "p22-numismatic, sans-serif",

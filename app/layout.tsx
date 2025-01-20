@@ -1,9 +1,9 @@
 import StyledComponentsRegistry from "@/library/registry";
 import { Metadata } from "next";
-import { MainLayout } from "@/components/styled";
-import Header from "./header";
+
 import GlobalThemeWrapper from "@/library/GlobalTheme";
 import GlobalStyles from "@/library/GlobalStyles";
+import MainLayout from "@/components/MainLayout";
 
 export const metadata: Metadata = {
   title: "Hapkido defensa personal",
@@ -22,10 +22,7 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <GlobalStyles />
           <GlobalThemeWrapper>
-            <MainLayout>
-              <Header />
-              {children}
-            </MainLayout>
+            <MainLayout>{children}</MainLayout>
           </GlobalThemeWrapper>
         </StyledComponentsRegistry>
       </body>
