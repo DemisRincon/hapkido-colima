@@ -1,11 +1,7 @@
-import { Fragment } from "react";
-import Home from "./home";
+import PageBuilder from "@/components/PageBuilder";
+import { locationData } from "@/library/data/location";
 const Page = () => {
-  return (
-    <Fragment>
-      <Home />
-    </Fragment>
-  );
+  return <PageBuilder data={locationData} />;
 };
 
 export default Page;
