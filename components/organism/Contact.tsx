@@ -24,13 +24,18 @@ const StyledLink = styled.a`
   color: ${({ theme }) => theme.colors.white};
   margin: 3rem;
   padding: 1rem 2rem;
-  min-width: 8rem;
+  width: 18rem;
   text-align: center;
   font-family: ${({ theme }) => theme.fonts.navLink};
-  background-color: ${({ theme }) => theme.colors.lightBlue};
+  background-color: ${({ theme }) => theme.colors.darkBlue};
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   border: 0.1rem solid ${({ theme }) => theme.colors.darkBlue};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+  }
 `;
 
 const Contact: React.FC<ContactProps> = ({ title, urls }) => {
@@ -40,7 +45,7 @@ const Contact: React.FC<ContactProps> = ({ title, urls }) => {
       {urls.map(({ url, name, icon: Icon }) => (
         <WrapperFadeOnView key={name}>
           <StyledLink href={url} target="_blank" rel="noopener noreferrer">
-            {Icon && <Icon />} {name}
+            {Icon && <Icon style={{ margin: "0 10px" }} />} {name}
           </StyledLink>
         </WrapperFadeOnView>
       ))}

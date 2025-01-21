@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { ReactNode } from "react";
 import styled from "styled-components";
 
 //H///
@@ -19,8 +21,12 @@ export const H2 = styled(motion.h2)`
 
 export const H3 = styled(motion.h3)`
   margin: 0;
-  line-height: ${({ theme }) => theme.fontSizes.h3};
   max-width: 80%;
+  line-height: ${({ theme }) => theme.fontSizes.h3};
+  font-size: ${({ theme }) => theme.fontSizes.h4};
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    font-size: ${({ theme }) => theme.fontSizes.h3};
+  }
 `;
 
 export const H4 = styled(motion.h4)`
@@ -58,3 +64,19 @@ export const Pharagraph = styled.p`
     max-width: 60%;
   }
 `;
+
+const StyledLink = styled(Link)`
+  margin: 0 15px;
+  font-size: ${({ theme }) => theme.fontSizes.h3};
+  text-decoration: none;
+  color: ${(props) => props.theme.colors.white};
+`;
+
+interface NavLinkProps {
+  href: string;
+  children: ReactNode;
+}
+
+export const NavLink = ({ href, children }: NavLinkProps) => (
+  <StyledLink href={href}>{children}</StyledLink>
+);

@@ -15,10 +15,14 @@ export interface GridProps {
 
 const GridContainer = styled.div<{ rows?: string; columns?: string }>`
   display: grid;
-  grid-template-rows: ${(props) => props.rows || "1fr"};
-  grid-template-columns: ${(props) => props.columns || "1fr 1fr"};
   gap: 10px;
   max-width: 80%;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    grid-template-rows: ${(props) => props.rows || "1fr"};
+    grid-template-columns: ${(props) => props.columns || "1fr 1fr"};
+  }
 `;
 
 const GridItem = styled.div`

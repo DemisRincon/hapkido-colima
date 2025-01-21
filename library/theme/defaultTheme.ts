@@ -2,6 +2,7 @@ import { Inter, Lilita_One } from "next/font/google";
 
 export interface Theme {
   colors: {
+    noSoBlack: string;
     darkBlue: string;
     lightBlue: string;
     grey: string;
@@ -60,6 +61,7 @@ const lilitaOne = Lilita_One({
 
 export const defaultTheme: Theme = {
   colors: {
+    noSoBlack: "#333333",
     darkBlue: "#2A3659",
     lightBlue: "#117DBF",
     grey: "#e9e7e4",

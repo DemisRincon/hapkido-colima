@@ -35,9 +35,13 @@ const Container = styled.div`
 
 const Map = styled.div`
   height: 500px;
-  width: 500px;
+  width: 80%;
   border: 1px solid black;
   border-radius: 10px;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    height: 500px;
+    width: 500px;
+  }
 `;
 
 const Button = styled.button`

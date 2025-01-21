@@ -52,6 +52,13 @@ const itemVariants = {
   visible,
 };
 
+const StyledH1 = styled(H1)`
+  font-size: ${({ theme }) => theme.fontSizes.h2};
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    font-size: ${({ theme }) => theme.fontSizes.h1};
+  }
+`;
+
 const FullScreenImage: React.FC<FullScreenImageProps> = ({
   images,
   content,
@@ -67,9 +74,9 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({
         >
           <Content>
             {content.map((t) => (
-              <H1 key={t} variants={itemVariants}>
+              <StyledH1 key={t} variants={itemVariants}>
                 <Strong color="white">{t}</Strong>
-              </H1>
+              </StyledH1>
             ))}
           </Content>
         </BlurrScreen>

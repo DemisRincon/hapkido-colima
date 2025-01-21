@@ -4,6 +4,7 @@ import { FiMail } from "react-icons/fi";
 import logo from "@/library/images/logo.png";
 import { GoLocation } from "react-icons/go";
 import { BsPerson } from "react-icons/bs";
+import { FaPerson } from "react-icons/fa6";
 
 export const navData = {
   links: [
@@ -19,7 +20,7 @@ export const navData = {
         data: [
           {
             text: "Pagina creada por Demis Rincon darmfma@gmail.com",
-            icon: BsPerson,
+            icon: FaPerson,
           },
         ],
       },
