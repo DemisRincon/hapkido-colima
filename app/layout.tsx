@@ -1,7 +1,6 @@
 import StyledComponentsRegistry from "@/library/registry";
 import { Metadata } from "next";
 import Script from "next/script";
-
 import GlobalThemeWrapper from "@/library/GlobalTheme";
 import GlobalStyles from "@/library/GlobalStyles";
 import MainLayout from "@/components/MainLayout";

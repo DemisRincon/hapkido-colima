@@ -131,7 +131,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             <StyledText>Nosotros</StyledText>
           </NavaLink>
           <NavaLink href="/gallery">
-            <StyledText>Galeria</StyledText>
+            <StyledText>Galería</StyledText>
           </NavaLink>
           <NavaLink href="/location">
             <StyledText>Ubicación</StyledText>

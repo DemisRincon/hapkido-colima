@@ -6,9 +6,9 @@ import { Pharagraph } from "../cells/styled";
 import styled from "styled-components";
 
 export interface ArticleProps {
-  title: string;
-  images: string[];
-  content: string[];
+  title?: string;
+  images?: string[];
+  content?: string[];
   $imagecircular?: boolean;
   imagewidth?: string;
 }
@@ -23,14 +23,14 @@ const Container = styled.div`
 
 const Article: React.FC<ArticleProps> = ({
   title,
-  content,
-  images,
+  content = [],
+  images = [],
   $imagecircular,
   imagewidth,
 }) => {
   return (
     <Container>
-      <LetterBanner title={title} fontSize="h3" bgcolor="white" />
+      <LetterBanner title={title || ""} fontSize="h3" bgcolor="white" />
 
       <WrapperFadeOnView>
         <Card

@@ -7,7 +7,7 @@ import WrapperFadeOnView from "../WrapperFadeOnView";
 
 export interface MapsProps {
   title: string;
-  url: string;
+  url?: string;
 }
 
 const loader = new Loader({
