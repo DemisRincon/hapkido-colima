@@ -12,6 +12,9 @@ import LetterBanner, { LetterBannerProps } from "./cells/LetterBanner";
 import Article, { ArticleProps } from "./organism/Article";
 import Grid, { GridProps } from "./organism/Grid";
 import Maps, { MapsProps } from "./organism/Maps";
+import SectionSideImage, {
+  SectionSideImageProps,
+} from "./organism/SectionSideImage";
 const PageBuilder: React.FC<PageProps> = ({ data }) => {
   const components = data.map(({ type, ...rest }, index) => {
     switch (type) {
@@ -35,6 +38,10 @@ const PageBuilder: React.FC<PageProps> = ({ data }) => {
         return <Grid key={index} {...(rest as GridProps)} />;
       case Maps:
         return <Maps key={index} {...(rest as MapsProps)} />;
+      case SectionSideImage:
+        return (
+          <SectionSideImage key={index} {...(rest as SectionSideImageProps)} />
+        );
     }
   });
   return <Fragment>{components}</Fragment>;
