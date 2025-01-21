@@ -5,7 +5,6 @@ import logo from "@/library/images/logo.png";
 import { motion, useTransform, useScroll } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-
 import styled from "styled-components";
 import WrapperFadeOnView from "./WrapperFadeOnView";
 
