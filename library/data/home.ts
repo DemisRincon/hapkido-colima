@@ -5,14 +5,14 @@ import hap4 from "@/library/images/hap4.jpg";
 import hap6 from "@/library/images/hap6.jpg";
 import { DataStructure } from "@/library/data/types";
 import InfiniteCarousel from "@/components/organism/InfiniteCarousel";
-import SectionBanner from "@/components/organism/SectionBanner";
 import Facebook from "@/components/organism/Facebook";
+import LetterBanner from "@/components/cells/LetterBanner";
 
 const homeData: DataStructure[] = [
   {
     type: FullScreenImage,
     images: [hap9.src],
-    text: ["Hapkido", "Colima"],
+    content: ["Hapkido", "Colima"],
     title: "Hapkido Colima",
   },
   {
@@ -21,7 +21,8 @@ const homeData: DataStructure[] = [
     images: [hap11.src, hap4.src, hap6.src],
   },
   {
-    type: SectionBanner,
+    type: LetterBanner,
+    fontSize: "h3",
     title:
       "Ven a tomar una clase de prueba para niños y adultos... Te esperamos",
   },

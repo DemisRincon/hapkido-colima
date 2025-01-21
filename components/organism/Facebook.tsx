@@ -11,19 +11,22 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  flex-direction: column;
+  height: auto;
+  padding: 6rem 0;
 `;
 
 const Iframe = styled.iframe`
   border: none;
   overflow: hidden;
+  margin-top: 2rem;
 `;
 
 const Facebook: React.FC<FacebookProps> = ({ title }) => {
   return (
     <WrapperFadeOnView threshold={0.3}>
-      <H4>{title}</H4>
       <Container>
+        <H4>{title}</H4>
         <Iframe
           src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FHapkidoColima&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=966124578767233"
           width="340"

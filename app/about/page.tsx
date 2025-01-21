@@ -2,11 +2,13 @@
 import { Fragment } from "react";
 import Characteristics from "./characteristics";
 import HapkidoForAll from "./hapkidoForAll";
-import Home from "./home";
+import PageBuilder from "@/components/PageBuilder";
+import { aboutData } from "@/library/data/about";
+
 const Page = () => {
   return (
     <Fragment>
-      <Home />
+      <PageBuilder data={aboutData} />
       <Characteristics />
       <HapkidoForAll />
     </Fragment>

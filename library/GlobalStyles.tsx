@@ -35,10 +35,10 @@ h1 {
   margin: 0.5em 0;
   text-transform: uppercase;
   strong {
-      color: white;
+      color: transparent;
       text-shadow: 0 0 0 3px ${defaultTheme.colors.black};
       @supports (-webkit-text-stroke: 1px ${defaultTheme.colors.black}) {
-        -webkit-text-fill-color: ${defaultTheme.colors.white};
+        -webkit-text-fill-color: transparent;
         -webkit-text-stroke: 3px ${defaultTheme.colors.black};
     }
   }
@@ -53,10 +53,10 @@ h2 {
   text-transform: uppercase;
   text-align: center;
   strong {
-      color: white;
+      color: transparent;
       text-shadow: 0 0 0 3px ${defaultTheme.colors.black};
       @supports (-webkit-text-stroke: 1px ${defaultTheme.colors.black}) {
-        -webkit-text-fill-color: ${defaultTheme.colors.white};
+        -webkit-text-fill-color: transparent;
         -webkit-text-stroke: 3px ${defaultTheme.colors.black};
     }
   }
@@ -70,10 +70,10 @@ h3 {
   text-transform: uppercase;
   text-align: center;
   strong {
-      color: white;
+      color: transparent;
       text-shadow: 0 0 0 3px ${defaultTheme.colors.black};
       @supports (-webkit-text-stroke: 1px ${defaultTheme.colors.black}) {
-        -webkit-text-fill-color: ${defaultTheme.colors.white};
+        -webkit-text-fill-color: transparent;
         -webkit-text-stroke: 3px ${defaultTheme.colors.black};
     }
   }
@@ -88,10 +88,10 @@ h4 {
   text-transform: uppercase;
   text-align: center;
   strong {
-      color: white;
+      color: transparent;
       text-shadow: 0 0 0 3px ${defaultTheme.colors.black};
       @supports (-webkit-text-stroke: 1px ${defaultTheme.colors.black}) {
-        -webkit-text-fill-color: ${defaultTheme.colors.white};
+        -webkit-text-fill-color: transparent;
         -webkit-text-stroke: 3px ${defaultTheme.colors.black};
     }
   }

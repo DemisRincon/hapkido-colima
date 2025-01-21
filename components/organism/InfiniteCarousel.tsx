@@ -13,10 +13,10 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   width: 100%;
   height: auto;
   overflow: hidden;
+  padding: 10rem 0;
 `;
 
 const Container = styled.div`

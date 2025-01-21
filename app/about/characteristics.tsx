@@ -15,13 +15,6 @@ const Characteristics = () => {
   return (
     <>
       <WrapperFadeOnView>
-        <TitleContainer>
-          <h2>
-            <strong>{data.section4.title}</strong>
-          </h2>
-        </TitleContainer>
-      </WrapperFadeOnView>
-      <WrapperFadeOnView>
         <SectionBanner
           title={data.section5.title}
           content={data.section5.content}

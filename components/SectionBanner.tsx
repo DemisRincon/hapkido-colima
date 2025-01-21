@@ -45,10 +45,8 @@ const SectionBanner: React.FC<SectionBannerProps> = ({
 
   return (
     <Container color={color}>
-      <Separator />
       {title && <H4>{title}</H4>}
       {contentResolved}
-      <Separator />
     </Container>
   );
 };

@@ -1,11 +1,11 @@
 "use client";
 import styled from "styled-components";
 import WrapperFadeOnView from "../WrapperFadeOnView";
-import { H3, H4 } from "../cells/styled";
+import { H1, H2, H3, H4 } from "./styled";
 
-export interface SectionBannerProps {
-  title?: string;
-  content?: string[];
+export interface LetterBannerProps {
+  title: string;
+  fontSize?: string;
   bgColor?: string;
 }
 
@@ -24,28 +24,33 @@ const Container = styled.div<ContainerProps>`
   background-color: ${({ theme, bgColor = "grey" }) => theme.colors[bgColor]};
 `;
 
-const Pharagraph = styled.p`
-  max-width: 90%;
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-    max-width: 800px;
-  }
-`;
-
-const SectionBanner: React.FC<SectionBannerProps> = ({
+const LetterBanner: React.FC<LetterBannerProps> = ({
   title,
-  content = [],
   bgColor,
+  fontSize,
 }) => {
+  const Title = () => {
+    switch (fontSize) {
+      case "h1":
+        return <H1>{title}</H1>;
+      case "h2":
+        return <H2>{title}</H2>;
+      case "h3":
+        return <H3>{title}</H3>;
+      case "h4":
+        return <H4>{title}</H4>;
+      default:
+        return <H1>{title}</H1>;
+    }
+  };
+
   return (
     <WrapperFadeOnView>
       <Container bgColor={bgColor}>
-        {title && <H4>{title}</H4>}
-        {content.map((item, index) => (
-          <Pharagraph key={index}>{item}</Pharagraph>
-        ))}
+        <Title />
       </Container>
     </WrapperFadeOnView>
   );
 };
 
-export default SectionBanner;
+export default LetterBanner;

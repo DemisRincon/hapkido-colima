@@ -1,11 +1,11 @@
 import WrapperFadeOnView from "../WrapperFadeOnView";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { H1 } from "../cells/styled";
+import { H1, Strong } from "../cells/styled";
 
 export interface FullScreenImageProps {
   images: string[];
-  text: string[];
+  content: string[];
 }
 
 interface ContainerProps {
@@ -52,7 +52,10 @@ const itemVariants = {
   visible,
 };
 
-const FullScreenImage: React.FC<FullScreenImageProps> = ({ images, text }) => {
+const FullScreenImage: React.FC<FullScreenImageProps> = ({
+  images,
+  content,
+}) => {
   return (
     <WrapperFadeOnView>
       <ContainerBackgroundImage $image={images[0]}>
@@ -63,9 +66,9 @@ const FullScreenImage: React.FC<FullScreenImageProps> = ({ images, text }) => {
           variants={{ visible: { transition: { staggerChildren: 0.6 } } }}
         >
           <Content>
-            {text.map((t) => (
+            {content.map((t) => (
               <H1 key={t} variants={itemVariants}>
-                <strong>{t}</strong>
+                <Strong color="white">{t}</Strong>
               </H1>
             ))}
           </Content>
