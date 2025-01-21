@@ -6,6 +6,7 @@ import { SectionBannerProps } from "@/components/organism/SectionBanner";
 import { LetterBannerProps } from "@/components/cells/LetterBanner";
 import { ArticleProps } from "@/components/organism/Article";
 import { GridProps } from "@/components/organism/Grid";
+import { MapsProps } from "@/components/organism/Maps";
 
 export interface PageProps {
   data: DataStructure[];
@@ -18,4 +19,5 @@ export type DataStructure =
   | (FacebookProps & { type: FC<FacebookProps> })
   | (LetterBannerProps & { type: FC<LetterBannerProps> })
   | (ArticleProps & { type: FC<ArticleProps> })
-  | (GridProps & { type: FC<GridProps> });
+  | (GridProps & { type: FC<GridProps> })
+  | (MapsProps & { type: FC<MapsProps> });
