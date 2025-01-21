@@ -6,11 +6,11 @@ import { H1, H2, H3, H4 } from "./styled";
 export interface LetterBannerProps {
   title: string;
   fontSize?: string;
-  bgColor?: string;
+  bgcolor?: string;
 }
 
 interface ContainerProps {
-  bgColor?: string;
+  bgcolor?: string;
 }
 
 const Container = styled.div<ContainerProps>`
@@ -21,12 +21,12 @@ const Container = styled.div<ContainerProps>`
   width: 100%;
   padding: 6rem 0;
   height: auto;
-  background-color: ${({ theme, bgColor = "grey" }) => theme.colors[bgColor]};
+  background-color: ${({ theme, bgcolor = "grey" }) => theme.colors[bgcolor]};
 `;
 
 const LetterBanner: React.FC<LetterBannerProps> = ({
   title,
-  bgColor,
+  bgcolor,
   fontSize,
 }) => {
   const Title = () => {
@@ -45,8 +45,8 @@ const LetterBanner: React.FC<LetterBannerProps> = ({
   };
 
   return (
-    <WrapperFadeOnView>
-      <Container bgColor={bgColor}>
+    <WrapperFadeOnView threshold={0.5}>
+      <Container bgcolor={bgcolor}>
         <Title />
       </Container>
     </WrapperFadeOnView>

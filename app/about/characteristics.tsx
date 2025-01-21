@@ -1,15 +1,6 @@
 import SectionBanner from "@/components/SectionBanner";
 import data from "./data.json";
 import WrapperFadeOnView from "@/components/WrapperFadeOnView";
-import styled from "styled-components";
-
-const TitleContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${({ theme }) => theme.colors.grey};
-`;
 
 const Characteristics = () => {
   return (

@@ -1,23 +1,47 @@
 "use client";
 import styled from "styled-components";
 
-interface CardProps {
+interface CardProps extends ImageProps {
   image: string;
 }
-const CarouselImage = styled.img`
-  width: 500px;
-  height: 100%;
+
+interface ImageProps {
+  $imagecircular?: boolean;
+  width?: string;
+  height?: string;
+  horizontalmargin?: string;
+}
+
+const Image = styled.img<ImageProps>`
+  width: ${({ width }) => width ?? "500px"};
+  height: ${({ height }) => height ?? "100%"};
+  ${({ horizontalmargin }) =>
+    horizontalmargin ? `margin: 0 ${horizontalmargin};` : ""}
   object-fit: cover;
+  border-radius: ${({ $imagecircular }) => ($imagecircular ? "50%" : "0")};
 `;
 
 const ImageContainer = styled.div`
-  margin: 0 0 0 20px;
+  margin: 20px auto;
 `;
 
-const Card: React.FC<CardProps> = ({ image }) => {
+const Card: React.FC<CardProps> = ({
+  image,
+  $imagecircular,
+  width,
+  height,
+  horizontalmargin,
+}) => {
   return (
     <ImageContainer>
-      <CarouselImage src={image} alt="Hapkido" />
+      <Image
+        src={image}
+        alt="Hapkido"
+        width={width}
+        height={height}
+        $imagecircular={$imagecircular}
+        horizontalmargin={horizontalmargin}
+      />
     </ImageContainer>
   );
 };

@@ -1,21 +1,22 @@
 import styled from "styled-components";
 import { H2 } from "../cells/styled";
+import WrapperFadeOnView from "../WrapperFadeOnView";
 
 export interface SectionSideImageProps {
   title: string;
   images: string[];
-  bgColor?: string;
+  bgcolor?: string;
   $column?: boolean;
   $roundedimage?: boolean;
 }
 
-const Container = styled.div<{ bgColor?: string }>`
+const Container = styled.div<{ bgcolor?: string }>`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: auto;
-  background-color: ${({ theme, bgColor = "white" }) => theme.colors[bgColor]};
+  background-color: ${({ theme, bgcolor = "white" }) => theme.colors[bgcolor]};
 `;
 
 const HeadSection = styled.div<{ $column?: boolean }>`
@@ -54,21 +55,23 @@ const HeadImage = styled.img.attrs<{
 const SectionSideImage: React.FC<SectionSideImageProps> = ({
   title,
   images,
-  bgColor,
+  bgcolor,
   $column = false,
   $roundedimage = false,
 }) => {
   return (
-    <Container bgColor={bgColor}>
-      <HeadSection $column={$column}>
-        <H2>{title}</H2>
-        <HeadImage
-          $roundedimage={$roundedimage}
-          $column={$column}
-          src={images[0]}
-          alt={title}
-        />
-      </HeadSection>
+    <Container bgcolor={bgcolor}>
+      <WrapperFadeOnView>
+        <HeadSection $column={$column}>
+          <H2>{title}</H2>
+          <HeadImage
+            $roundedimage={$roundedimage}
+            $column={$column}
+            src={images[0]}
+            alt={title}
+          />
+        </HeadSection>
+      </WrapperFadeOnView>
     </Container>
   );
 };

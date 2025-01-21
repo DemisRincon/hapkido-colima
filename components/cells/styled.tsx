@@ -52,3 +52,10 @@ export const Separator = styled.div`
     height: 100px;
   }
 `;
+
+export const Pharagraph = styled.p`
+  max-width: 90%;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    max-width: 60%;
+  }
+`;
