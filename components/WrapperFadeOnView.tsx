@@ -14,16 +14,6 @@ export interface IWrapperFadeInProps {
   fromTop?: boolean;
 }
 
-const Wrapper = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 100vw;
-  width: 100%;
-  overflow: hidden;
-`;
-
 const WrapperFadeOnView: React.FC<IWrapperFadeInProps> = ({
   children,
   conditionWrapper,
@@ -65,4 +55,15 @@ const WrapperFadeOnView: React.FC<IWrapperFadeInProps> = ({
     </Wrapper>
   );
 };
+
+const Wrapper = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+  width: 100%;
+  overflow: hidden;
+`;
+
 export default WrapperFadeOnView;

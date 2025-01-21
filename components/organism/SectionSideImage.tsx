@@ -10,6 +10,30 @@ export interface SectionSideImageProps {
   $roundedimage?: boolean;
 }
 
+const SectionSideImage: React.FC<SectionSideImageProps> = ({
+  title,
+  images,
+  bgcolor,
+  $column = false,
+  $roundedimage = false,
+}) => {
+  return (
+    <Container bgcolor={bgcolor}>
+      <WrapperFadeOnView>
+        <HeadSection $column={$column}>
+          <H2>{title}</H2>
+          <HeadImage
+            $roundedimage={$roundedimage}
+            $column={$column}
+            src={images[0]}
+            alt={title}
+          />
+        </HeadSection>
+      </WrapperFadeOnView>
+    </Container>
+  );
+};
+
 const Container = styled.div<{ bgcolor?: string }>`
   display: flex;
   justify-content: center;
@@ -51,29 +75,5 @@ const HeadImage = styled.img.attrs<{
     width: auto;
   }
 `;
-
-const SectionSideImage: React.FC<SectionSideImageProps> = ({
-  title,
-  images,
-  bgcolor,
-  $column = false,
-  $roundedimage = false,
-}) => {
-  return (
-    <Container bgcolor={bgcolor}>
-      <WrapperFadeOnView>
-        <HeadSection $column={$column}>
-          <H2>{title}</H2>
-          <HeadImage
-            $roundedimage={$roundedimage}
-            $column={$column}
-            src={images[0]}
-            alt={title}
-          />
-        </HeadSection>
-      </WrapperFadeOnView>
-    </Container>
-  );
-};
 
 export default SectionSideImage;

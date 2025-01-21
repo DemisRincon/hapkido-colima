@@ -24,37 +24,6 @@ const mapOptions = {
   zoom: 18,
 };
 
-const Container = styled.div`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.white};
-`;
-
-const Map = styled.div`
-  height: 500px;
-  width: 80%;
-  border: 1px solid black;
-  border-radius: 10px;
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-    height: 500px;
-    width: 500px;
-  }
-`;
-
-const Button = styled.button`
-  background-color: ${({ theme }) => theme.colors.lightBlue};
-  color: ${({ theme }) => theme.colors.white};
-  font-size: ${({ theme }) => theme.fontSizes.h5};
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 10px;
-  margin-top: 1rem;
-  cursor: pointer;
-`;
-
 const Maps: React.FC<MapsProps> = ({ title, url }) => {
   const safeUrl = url || "/";
   useEffect(() => {
@@ -103,5 +72,36 @@ const Maps: React.FC<MapsProps> = ({ title, url }) => {
     </Container>
   );
 };
+
+const Container = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: ${({ theme }) => theme.colors.white};
+`;
+
+const Map = styled.div`
+  height: 500px;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 10px;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    height: 500px;
+    width: 500px;
+  }
+`;
+
+const Button = styled.button`
+  background-color: ${({ theme }) => theme.colors.lightBlue};
+  color: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme }) => theme.fontSizes.h5};
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  margin-top: 1rem;
+  cursor: pointer;
+`;
 
 export default Maps;

@@ -13,14 +13,6 @@ export interface ArticleProps {
   imagewidth?: string;
 }
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0 6rem 0;
-`;
-
 const Article: React.FC<ArticleProps> = ({
   title,
   content = [],
@@ -47,5 +39,13 @@ const Article: React.FC<ArticleProps> = ({
     </Container>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 6rem 0;
+`;
 
 export default Article;

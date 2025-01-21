@@ -15,6 +15,76 @@ interface MainLayoutProps {
   children: ReactNode;
 }
 
+const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+  const toggleMobileNav = () => {
+    setIsMobileNavOpen(!isMobileNavOpen);
+  };
+
+  const { scrollYProgress } = useScroll();
+  const [logoSrc] = useState(logo.src);
+  const percentageTransition = useViewportHeightTransitionPercentage();
+  const y = useTransform(scrollYProgress, [0, percentageTransition], [0, -4]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, percentageTransition],
+    [0, 1]
+  );
+
+  return (
+    <Container>
+      <HeaderContainer
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <GradientEffect style={{ y }} />
+        <SolidBackground style={{ opacity, y }} />
+        {logoSrc && <Logo src={logoSrc} alt="logo" />}
+        <Nav>
+          {navData.links.map((link) => (
+            <NavLink key={link.href} href={link.href}>
+              <StyledText>{link.label}</StyledText>
+            </NavLink>
+          ))}
+        </Nav>
+
+        <MenuIconContainer onClick={toggleMobileNav}>
+          <GiHamburgerMenu
+            size={32}
+            color="white"
+            style={{ display: "block", cursor: "pointer" }}
+          />
+        </MenuIconContainer>
+      </HeaderContainer>
+      <MobileNav
+        toggleMobileNav={toggleMobileNav}
+        isMobileNavOpen={isMobileNavOpen}
+      />
+      {children}
+      <BottomContainer>
+        <WrapperFadeOnView>
+          <FooterContainer>
+            {navData.footerContent.content.map((content, index) => (
+              <SideContainer key={index}>
+                {content.data.map((item, secondIndex) => (
+                  <ItemContainer key={`item-` + secondIndex}>
+                    {"icon" in item && <item.icon size={32} />}
+                    {"image" in item && <Image src={item.image} />}
+                    {"text" in item && <Span key={item.text}>{item.text}</Span>}
+                  </ItemContainer>
+                ))}
+              </SideContainer>
+            ))}
+          </FooterContainer>
+        </WrapperFadeOnView>
+        <p>{navData.footerContent.bottom}</p>
+      </BottomContainer>
+    </Container>
+  );
+};
+
 export const Container = styled.div`
   max-width: 100vw;
   height: 100vh;
@@ -140,73 +210,4 @@ const MenuIconContainer = styled.div`
   }
 `;
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
-  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
-
-  const toggleMobileNav = () => {
-    setIsMobileNavOpen(!isMobileNavOpen);
-  };
-
-  const { scrollYProgress } = useScroll();
-  const [logoSrc] = useState(logo.src);
-  const percentageTransition = useViewportHeightTransitionPercentage();
-  const y = useTransform(scrollYProgress, [0, percentageTransition], [0, -4]);
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, percentageTransition],
-    [0, 1]
-  );
-
-  return (
-    <Container>
-      <HeaderContainer
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        <GradientEffect style={{ y }} />
-        <SolidBackground style={{ opacity, y }} />
-        {logoSrc && <Logo src={logoSrc} alt="logo" />}
-        <Nav>
-          {navData.links.map((link) => (
-            <NavLink key={link.href} href={link.href}>
-              <StyledText>{link.label}</StyledText>
-            </NavLink>
-          ))}
-        </Nav>
-
-        <MenuIconContainer onClick={toggleMobileNav}>
-          <GiHamburgerMenu
-            size={32}
-            color="white"
-            style={{ display: "block", cursor: "pointer" }}
-          />
-        </MenuIconContainer>
-      </HeaderContainer>
-      <MobileNav
-        toggleMobileNav={toggleMobileNav}
-        isMobileNavOpen={isMobileNavOpen}
-      />
-      {children}
-      <BottomContainer>
-        <WrapperFadeOnView>
-          <FooterContainer>
-            {navData.footerContent.content.map((content, index) => (
-              <SideContainer key={index}>
-                {content.data.map((item, secondIndex) => (
-                  <ItemContainer key={`item-` + secondIndex}>
-                    {"icon" in item && <item.icon size={32} />}
-                    {"image" in item && <Image src={item.image} />}
-                    {"text" in item && <Span key={item.text}>{item.text}</Span>}
-                  </ItemContainer>
-                ))}
-              </SideContainer>
-            ))}
-          </FooterContainer>
-        </WrapperFadeOnView>
-        <p>{navData.footerContent.bottom}</p>
-      </BottomContainer>
-    </Container>
-  );
-};
 export default MainLayout;

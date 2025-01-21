@@ -12,19 +12,6 @@ interface ImageProps {
   horizontalmargin?: string;
 }
 
-const Image = styled.img<ImageProps>`
-  width: ${({ width }) => width ?? "500px"};
-  height: ${({ height }) => height ?? "100%"};
-  ${({ horizontalmargin }) =>
-    horizontalmargin ? `margin: 0 ${horizontalmargin};` : ""}
-  object-fit: cover;
-  border-radius: ${({ $imagecircular }) => ($imagecircular ? "50%" : "0")};
-`;
-
-const ImageContainer = styled.div`
-  margin: 20px auto;
-`;
-
 const Card: React.FC<CardProps> = ({
   image,
   $imagecircular,
@@ -45,5 +32,18 @@ const Card: React.FC<CardProps> = ({
     </ImageContainer>
   );
 };
+
+const Image = styled.img<ImageProps>`
+  width: ${({ width }) => width ?? "500px"};
+  height: ${({ height }) => height ?? "100%"};
+  ${({ horizontalmargin }) =>
+    horizontalmargin ? `margin: 0 ${horizontalmargin};` : ""}
+  object-fit: cover;
+  border-radius: ${({ $imagecircular }) => ($imagecircular ? "50%" : "0")};
+`;
+
+const ImageContainer = styled.div`
+  margin: 20px auto;
+`;
 
 export default Card;

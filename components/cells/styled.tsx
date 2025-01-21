@@ -4,8 +4,25 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ReactNode } from "react";
 import styled from "styled-components";
+//////////////////////////////LINK///////////////////////////////
+interface NavLinkProps {
+  href: string;
+  children: ReactNode;
+}
 
-//H///
+export const NavLink = ({ href, children }: NavLinkProps) => (
+  <StyledLink href={href}>{children}</StyledLink>
+);
+
+const StyledLink = styled(Link)`
+  margin: 0 15px;
+  font-size: ${({ theme }) => theme.fontSizes.h3};
+  text-decoration: none;
+  color: ${(props) => props.theme.colors.white};
+`;
+
+///////////////////////////////H///////////////////////////////
+
 export const H1 = styled(motion.h1)`
   color: ${({ theme, color = "black" }) => theme.colors[color]};
   margin: 0;
@@ -42,21 +59,7 @@ export const Strong = styled.strong`
   }
 `;
 
-export const PageLayout = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`;
-
-export const Separator = styled.div`
-  width: 100%;
-  height: 0;
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-    height: 100px;
-  }
-`;
+///////////////////////////////PARAGRAPH///////////////////////////////
 
 export const Pharagraph = styled.p`
   max-width: 90%;
@@ -64,19 +67,3 @@ export const Pharagraph = styled.p`
     max-width: 60%;
   }
 `;
-
-const StyledLink = styled(Link)`
-  margin: 0 15px;
-  font-size: ${({ theme }) => theme.fontSizes.h3};
-  text-decoration: none;
-  color: ${(props) => props.theme.colors.white};
-`;
-
-interface NavLinkProps {
-  href: string;
-  children: ReactNode;
-}
-
-export const NavLink = ({ href, children }: NavLinkProps) => (
-  <StyledLink href={href}>{children}</StyledLink>
-);

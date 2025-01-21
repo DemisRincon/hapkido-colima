@@ -9,30 +9,6 @@ export interface InfiniteCarouselProps {
   title: string;
 }
 
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  padding: 10rem 0;
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-shrink: 0;
-  height: 100%;
-`;
-
-const Carrusel = styled(motion.div)`
-  display: flex;
-  width: fit-content;
-  height: 300px;
-  margin: 50px 0;
-  flex-shrink: 0;
-`;
-
 const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
   images,
   title,
@@ -76,5 +52,29 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
     </MainContainer>
   );
 };
+
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 10rem 0;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-shrink: 0;
+  height: 100%;
+`;
+
+const Carrusel = styled(motion.div)`
+  display: flex;
+  width: fit-content;
+  height: 300px;
+  margin: 50px 0;
+  flex-shrink: 0;
+`;
 
 export default InfiniteCarousel;

@@ -15,10 +15,7 @@ export const breakpoints: Breakpoints = {
 };
 
 const GlobalStyles = createGlobalStyle`
-*{
 
-
-}
 body{
   padding: 0;
   margin: 0;
@@ -43,7 +40,6 @@ h1 {
     }
   }
 }
-
 
 h2 {
   font-family: ${defaultTheme.fonts.hfonts};
@@ -78,7 +74,6 @@ h3 {
     }
   }
 }
-
 
 h4 {
   font-family: ${defaultTheme.fonts.hfonts};

@@ -13,6 +13,32 @@ export interface GridProps {
   photowidth?: string;
 }
 
+const Grid: React.FC<GridProps> = ({
+  title = "",
+  images,
+  rows,
+  columns,
+  photoheight,
+  photowidth,
+}) => {
+  return (
+    <Container>
+      <WrapperFadeOnView>
+        <LetterBanner title={title} fontSize="h3" bgcolor="white" />
+      </WrapperFadeOnView>
+      <GridContainer rows={rows} columns={columns}>
+        {images.map((image, index) => (
+          <WrapperFadeOnView key={index}>
+            <GridItem>
+              <Card image={image} height={photoheight} width={photowidth} />
+            </GridItem>
+          </WrapperFadeOnView>
+        ))}
+      </GridContainer>
+    </Container>
+  );
+};
+
 const GridContainer = styled.div<{ rows?: string; columns?: string }>`
   display: grid;
   gap: 10px;
@@ -39,31 +65,5 @@ const Container = styled.div`
   width: 100%;
   padding: 6rem 0;
 `;
-
-const Grid: React.FC<GridProps> = ({
-  title = "",
-  images,
-  rows,
-  columns,
-  photoheight,
-  photowidth,
-}) => {
-  return (
-    <Container>
-      <WrapperFadeOnView>
-        <LetterBanner title={title} fontSize="h3" bgcolor="white" />
-      </WrapperFadeOnView>
-      <GridContainer rows={rows} columns={columns}>
-        {images.map((image, index) => (
-          <WrapperFadeOnView key={index}>
-            <GridItem>
-              <Card image={image} height={photoheight} width={photowidth} />
-            </GridItem>
-          </WrapperFadeOnView>
-        ))}
-      </GridContainer>
-    </Container>
-  );
-};
 
 export default Grid;

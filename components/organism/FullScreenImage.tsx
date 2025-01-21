@@ -8,6 +8,32 @@ export interface FullScreenImageProps {
   content: string[];
 }
 
+const FullScreenImage: React.FC<FullScreenImageProps> = ({
+  images,
+  content,
+}) => {
+  return (
+    <WrapperFadeOnView>
+      <ContainerBackgroundImage $image={images[0]}>
+        <BlurrScreen
+          initial="hidden"
+          animate="visible"
+          exit={{ opacity: 0, transition: { duration: 1 } }}
+          variants={{ visible: { transition: { staggerChildren: 0.6 } } }}
+        >
+          <Content>
+            {content.map((t) => (
+              <StyledH1 key={t} variants={itemVariants}>
+                <Strong color="white">{t}</Strong>
+              </StyledH1>
+            ))}
+          </Content>
+        </BlurrScreen>
+      </ContainerBackgroundImage>
+    </WrapperFadeOnView>
+  );
+};
+
 interface ContainerProps {
   $image: string;
 }
@@ -58,31 +84,4 @@ const StyledH1 = styled(H1)`
     font-size: ${({ theme }) => theme.fontSizes.h1};
   }
 `;
-
-const FullScreenImage: React.FC<FullScreenImageProps> = ({
-  images,
-  content,
-}) => {
-  return (
-    <WrapperFadeOnView>
-      <ContainerBackgroundImage $image={images[0]}>
-        <BlurrScreen
-          initial="hidden"
-          animate="visible"
-          exit={{ opacity: 0, transition: { duration: 1 } }}
-          variants={{ visible: { transition: { staggerChildren: 0.6 } } }}
-        >
-          <Content>
-            {content.map((t) => (
-              <StyledH1 key={t} variants={itemVariants}>
-                <Strong color="white">{t}</Strong>
-              </StyledH1>
-            ))}
-          </Content>
-        </BlurrScreen>
-      </ContainerBackgroundImage>
-    </WrapperFadeOnView>
-  );
-};
-
 export default FullScreenImage;

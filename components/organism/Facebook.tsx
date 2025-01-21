@@ -7,21 +7,6 @@ export interface FacebookProps {
   title: string;
 }
 
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: auto;
-  padding: 6rem 0;
-`;
-
-const Iframe = styled.iframe`
-  border: none;
-  overflow: hidden;
-  margin-top: 2rem;
-`;
-
 const Facebook: React.FC<FacebookProps> = ({ title }) => {
   return (
     <WrapperFadeOnView threshold={0.3}>
@@ -41,5 +26,20 @@ const Facebook: React.FC<FacebookProps> = ({ title }) => {
     </WrapperFadeOnView>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  padding: 6rem 0;
+`;
+
+const Iframe = styled.iframe`
+  border: none;
+  overflow: hidden;
+  margin-top: 2rem;
+`;
 
 export default Facebook;

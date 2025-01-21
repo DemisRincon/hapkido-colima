@@ -16,6 +16,7 @@ import SectionSideImage, {
   SectionSideImageProps,
 } from "./organism/SectionSideImage";
 import Contact, { ContactProps } from "./organism/Contact";
+
 const PageBuilder: React.FC<PageProps> = ({ data }) => {
   const components = data.map(({ type, ...rest }, index) => {
     switch (type) {

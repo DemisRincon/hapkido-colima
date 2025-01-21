@@ -13,17 +13,6 @@ interface ContainerProps {
   bgcolor?: string;
 }
 
-const Container = styled.div<ContainerProps>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  padding: 6rem 0;
-  height: auto;
-  background-color: ${({ theme, bgcolor = "grey" }) => theme.colors[bgcolor]};
-`;
-
 const LetterBanner: React.FC<LetterBannerProps> = ({
   title,
   bgcolor,
@@ -52,5 +41,16 @@ const LetterBanner: React.FC<LetterBannerProps> = ({
     </WrapperFadeOnView>
   );
 };
+
+const Container = styled.div<ContainerProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 6rem 0;
+  height: auto;
+  background-color: ${({ theme, bgcolor = "grey" }) => theme.colors[bgcolor]};
+`;
 
 export default LetterBanner;

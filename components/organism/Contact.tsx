@@ -10,6 +10,21 @@ export interface ContactProps {
   urls: { url: string; name: string; icon?: IconType }[];
 }
 
+const Contact: React.FC<ContactProps> = ({ title, urls }) => {
+  return (
+    <Container>
+      <LetterBanner title={title} fontSize="h3" bgcolor="white" />
+      {urls.map(({ url, name, icon: Icon }) => (
+        <WrapperFadeOnView key={name}>
+          <StyledLink href={url} target="_blank" rel="noopener noreferrer">
+            {Icon && <Icon style={{ margin: "0 10px" }} />} {name}
+          </StyledLink>
+        </WrapperFadeOnView>
+      ))}
+    </Container>
+  );
+};
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,23 +49,6 @@ const StyledLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-  }
 `;
-
-const Contact: React.FC<ContactProps> = ({ title, urls }) => {
-  return (
-    <Container>
-      <LetterBanner title={title} fontSize="h3" bgcolor="white" />
-      {urls.map(({ url, name, icon: Icon }) => (
-        <WrapperFadeOnView key={name}>
-          <StyledLink href={url} target="_blank" rel="noopener noreferrer">
-            {Icon && <Icon style={{ margin: "0 10px" }} />} {name}
-          </StyledLink>
-        </WrapperFadeOnView>
-      ))}
-    </Container>
-  );
-};
 
 export default Contact;
