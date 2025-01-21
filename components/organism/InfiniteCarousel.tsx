@@ -5,7 +5,7 @@ import WrapperFadeOnView from "../WrapperFadeOnView";
 import Card from "../cells/Card";
 
 export interface InfiniteCarouselProps {
-  images?: string[];
+  images: string[];
   title: string;
 }
 

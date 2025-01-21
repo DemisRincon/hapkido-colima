@@ -4,7 +4,7 @@ import WrapperFadeOnView from "../WrapperFadeOnView";
 import { H4, Pharagraph } from "../cells/styled";
 
 export interface SectionBannerProps {
-  title?: string;
+  title: string;
   content?: string[];
   bgcolor?: string;
   padding?: string;

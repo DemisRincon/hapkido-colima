@@ -5,7 +5,7 @@ import WrapperFadeOnView from "../WrapperFadeOnView";
 import LetterBanner from "../cells/LetterBanner";
 
 export interface GridProps {
-  title?: string;
+  title: string;
   images: string[];
   rows?: string;
   columns?: string;
