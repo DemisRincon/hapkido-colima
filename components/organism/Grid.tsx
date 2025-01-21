@@ -9,6 +9,8 @@ export interface GridProps {
   images: string[];
   rows?: string;
   columns?: string;
+  photoheight?: string;
+  photowidth?: string;
 }
 
 const GridContainer = styled.div<{ rows?: string; columns?: string }>`
@@ -16,6 +18,7 @@ const GridContainer = styled.div<{ rows?: string; columns?: string }>`
   grid-template-rows: ${(props) => props.rows || "1fr"};
   grid-template-columns: ${(props) => props.columns || "1fr 1fr"};
   gap: 10px;
+  max-width: 80%;
 `;
 
 const GridItem = styled.div`
@@ -33,7 +36,14 @@ const Container = styled.div`
   padding: 6rem 0;
 `;
 
-const Grid: React.FC<GridProps> = ({ title, images, rows, columns }) => {
+const Grid: React.FC<GridProps> = ({
+  title,
+  images,
+  rows,
+  columns,
+  photoheight,
+  photowidth,
+}) => {
   return (
     <Container>
       <WrapperFadeOnView>
@@ -43,7 +53,7 @@ const Grid: React.FC<GridProps> = ({ title, images, rows, columns }) => {
         {images.map((image, index) => (
           <WrapperFadeOnView key={index}>
             <GridItem>
-              <Card image={image} />
+              <Card image={image} height={photoheight} width={photowidth} />
             </GridItem>
           </WrapperFadeOnView>
         ))}

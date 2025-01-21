@@ -1,12 +1,9 @@
-import { Fragment } from "react";
+"use client";
+import PageBuilder from "@/components/PageBuilder";
+import { galleryData } from "@/library/data/gallery";
 
-import Home from "./home";
 const Page = () => {
-  return (
-    <Fragment>
-      <Home />
-    </Fragment>
-  );
+  return <PageBuilder data={galleryData} />;
 };
 
 export default Page;
