@@ -1,5 +1,5 @@
 "use client";
-import { PageLayout } from "@/components/styled";
+import { PageLayout } from "@/components/cells/styled";
 
 //como llegar a la escuela y su texto y direccion
 

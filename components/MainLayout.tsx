@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import useViewportHeightTransitionPercentage from "@/library/hooks/useViewportHeightTransitionPercentage";
 import logo from "@/library/images/logo.png";
 import { motion, useTransform, useScroll } from "framer-motion";

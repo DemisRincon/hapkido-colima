@@ -1,21 +1,8 @@
 "use client";
-import { Fragment } from "react";
-import School from "./school";
-import FreeClass from "./freeClass";
-import Facebook from "./facebook";
-import Home from "./home";
-import { Separator } from "@/components/styled";
+import PageBuilder from "@/components/PageBuilder";
+import homeData from "@/library/data/home";
 const Page = () => {
-  return (
-    <Fragment>
-      <Home />
-      <Separator />
-      <School />
-      <Separator />
-      <FreeClass />
-      <Facebook />
-    </Fragment>
-  );
+  return <PageBuilder data={homeData} />;
 };
 
 export default Page;

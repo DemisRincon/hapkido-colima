@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
 import styled from "styled-components";
-import { Separator } from "./styled";
+import { Separator } from "./cells/styled";
 
 interface SectionBannerProps {
   title?: string;

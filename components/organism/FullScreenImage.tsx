@@ -1,14 +1,18 @@
-"use client";
-import WrapperFadeOnView from "@/components/WrapperFadeOnView";
-import hap9 from "@/library/images/hap9.jpg";
-import { motion } from "framer-motion";
+import WrapperFadeOnView from "../WrapperFadeOnView";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import { H1 } from "../cells/styled";
+
+export interface FullScreenImageProps {
+  images: string[];
+  text: string[];
+}
 
 interface ContainerProps {
   $image: string;
 }
 
-const Container = styled.div<ContainerProps>`
+const ContainerBackgroundImage = styled.div<ContainerProps>`
   background-image: url(${(props) => props.$image});
   width: 100vw;
   height: 100vh;
@@ -41,14 +45,6 @@ const Content = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
 `;
-
-const H1 = styled(motion.h1)`
-  color: white;
-  margin: 0;
-  line-height: ${({ theme }) => theme.fontSizes.h1};
-  max-width: 100vw;
-`;
-
 const visible = { opacity: 1, y: 0, transition: { duration: 1, delay: 0.5 } };
 
 const itemVariants = {
@@ -56,10 +52,10 @@ const itemVariants = {
   visible,
 };
 
-const Home = () => {
+const FullScreenImage: React.FC<FullScreenImageProps> = ({ images, text }) => {
   return (
     <WrapperFadeOnView>
-      <Container $image={hap9.src}>
+      <ContainerBackgroundImage $image={images[0]}>
         <BlurrScreen
           initial="hidden"
           animate="visible"
@@ -67,17 +63,16 @@ const Home = () => {
           variants={{ visible: { transition: { staggerChildren: 0.6 } } }}
         >
           <Content>
-            <H1 variants={itemVariants}>
-              <strong>Hapkido</strong>
-            </H1>
-            <H1 variants={itemVariants}>
-              <strong>Colima</strong>
-            </H1>
+            {text.map((t) => (
+              <H1 key={t} variants={itemVariants}>
+                <strong>{t}</strong>
+              </H1>
+            ))}
           </Content>
         </BlurrScreen>
-      </Container>
+      </ContainerBackgroundImage>
     </WrapperFadeOnView>
   );
 };
 
-export default Home;
+export default FullScreenImage;

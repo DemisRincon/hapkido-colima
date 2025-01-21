@@ -1,12 +1,17 @@
 "use client";
 import WrapperFadeOnView from "@/components/WrapperFadeOnView";
 import styled from "styled-components";
+import { H4 } from "../cells/styled";
+
+export interface FacebookProps {
+  title: string;
+}
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 500px;
 `;
 
 const Iframe = styled.iframe`
@@ -14,9 +19,10 @@ const Iframe = styled.iframe`
   overflow: hidden;
 `;
 
-const Facebook = () => {
+const Facebook: React.FC<FacebookProps> = ({ title }) => {
   return (
     <WrapperFadeOnView threshold={0.3}>
+      <H4>{title}</H4>
       <Container>
         <Iframe
           src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FHapkidoColima&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=966124578767233"
