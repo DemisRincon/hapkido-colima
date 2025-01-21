@@ -7,7 +7,7 @@ import WrapperFadeOnView from "../WrapperFadeOnView";
 
 export interface MapsProps {
   title: string;
-  url?: string;
+  url: string;
 }
 
 const loader = new Loader({
@@ -52,6 +52,7 @@ const Button = styled.button`
 `;
 
 const Maps: React.FC<MapsProps> = ({ title, url }) => {
+  const safeUrl = url || "/";
   useEffect(() => {
     loader.importLibrary("marker").then(({ Marker }) => {
       loader.importLibrary("maps").then(({ Map, InfoWindow }) => {
@@ -91,7 +92,9 @@ const Maps: React.FC<MapsProps> = ({ title, url }) => {
         <Map id="map" />
       </WrapperFadeOnView>
       <WrapperFadeOnView>
-        <Button onClick={() => (window.location.href = url)}>LLEVAME</Button>
+        <Button onClick={() => (window.location.href = safeUrl)}>
+          LLEVAME
+        </Button>
       </WrapperFadeOnView>
     </Container>
   );

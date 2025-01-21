@@ -1,3 +1,4 @@
+"use client";
 import { DataStructure } from "./types";
 import Maps from "@/components/organism/Maps";
 import Grid from "@/components/organism/Grid";
