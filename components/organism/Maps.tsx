@@ -3,6 +3,7 @@ import { Loader } from "@googlemaps/js-api-loader";
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import LetterBanner from "../cells/LetterBanner";
+import WrapperFadeOnView from "../WrapperFadeOnView";
 
 export interface MapsProps {
   title: string;
@@ -86,8 +87,12 @@ const Maps: React.FC<MapsProps> = ({ title, url }) => {
   return (
     <Container>
       <LetterBanner title={title} fontSize="h3" bgcolor="white" />
-      <Map id="map" />
-      <Button onClick={() => (window.location.href = url)}>LLEVAME</Button>
+      <WrapperFadeOnView>
+        <Map id="map" />
+      </WrapperFadeOnView>
+      <WrapperFadeOnView>
+        <Button onClick={() => (window.location.href = url)}>LLEVAME</Button>
+      </WrapperFadeOnView>
     </Container>
   );
 };
