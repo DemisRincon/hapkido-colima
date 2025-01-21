@@ -1,6 +1,9 @@
-import { Fragment } from "react";
+"use client";
+import PageBuilder from "@/components/PageBuilder";
+import { contactData } from "@/library/data/contact";
+
 const Page = () => {
-  return <Fragment>hello</Fragment>;
+  return <PageBuilder data={contactData} />;
 };
 
 export default Page;

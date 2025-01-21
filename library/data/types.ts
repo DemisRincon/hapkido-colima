@@ -7,6 +7,7 @@ import { LetterBannerProps } from "@/components/cells/LetterBanner";
 import { ArticleProps } from "@/components/organism/Article";
 import { GridProps } from "@/components/organism/Grid";
 import { MapsProps } from "@/components/organism/Maps";
+import { ContactProps } from "@/components/organism/Contact";
 
 export interface PageProps {
   data: DataStructure[];
@@ -20,4 +21,5 @@ export type DataStructure =
   | (LetterBannerProps & { type: FC<LetterBannerProps> })
   | (ArticleProps & { type: FC<ArticleProps> })
   | (GridProps & { type: FC<GridProps> })
-  | (MapsProps & { type: FC<MapsProps> });
+  | (MapsProps & { type: FC<MapsProps> })
+  | (ContactProps & { type: FC<ContactProps> });

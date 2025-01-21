@@ -15,6 +15,7 @@ import Maps, { MapsProps } from "./organism/Maps";
 import SectionSideImage, {
   SectionSideImageProps,
 } from "./organism/SectionSideImage";
+import Contact, { ContactProps } from "./organism/Contact";
 const PageBuilder: React.FC<PageProps> = ({ data }) => {
   const components = data.map(({ type, ...rest }, index) => {
     switch (type) {
@@ -42,6 +43,8 @@ const PageBuilder: React.FC<PageProps> = ({ data }) => {
         return (
           <SectionSideImage key={index} {...(rest as SectionSideImageProps)} />
         );
+      case Contact:
+        return <Contact key={index} {...(rest as ContactProps)} />;
     }
   });
   return <Fragment>{components}</Fragment>;
