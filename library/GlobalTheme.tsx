@@ -5,6 +5,7 @@ import GlobalStyles from "./GlobalStyles";
 import React from "react";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 import { defaultTheme } from "./theme/defaultTheme";
+import StyledComponentsRegistry from "./registry";
 
 interface GlobalThemeWrapperProps {
   children: React.ReactNode;
@@ -16,10 +17,12 @@ const GlobalThemeWrapper: React.FC<GlobalThemeWrapperProps> = ({
   const [theme] = useLocalStorage("theme", defaultTheme);
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      {children}
-    </ThemeProvider>
+    <StyledComponentsRegistry>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        {children}
+      </ThemeProvider>
+    </StyledComponentsRegistry>
   );
 };
 
