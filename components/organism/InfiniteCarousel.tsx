@@ -26,7 +26,7 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           >
             {images.map((image, index) => (
-              <Card key={index} image={image} horizontalmargin="10px" />
+              <Card key={index} image={image} $horizontalmargin="10px" />
             ))}
           </Carrusel>
           <Carrusel
@@ -35,7 +35,7 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           >
             {images.map((image, index) => (
-              <Card key={index} image={image} horizontalmargin="10px" />
+              <Card key={index} image={image} $horizontalmargin="10px" />
             ))}
           </Carrusel>
           <Carrusel
@@ -44,7 +44,7 @@ const InfiniteCarousel: React.FC<InfiniteCarouselProps> = ({
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           >
             {images.map((image, index) => (
-              <Card key={index} image={image} horizontalmargin="10px" />
+              <Card key={index} image={image} $horizontalmargin="10px" />
             ))}
           </Carrusel>
         </Container>

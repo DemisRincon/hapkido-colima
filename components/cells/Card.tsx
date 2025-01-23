@@ -9,7 +9,7 @@ interface ImageProps {
   $imagecircular?: boolean;
   width?: string;
   height?: string;
-  horizontalmargin?: string;
+  $horizontalmargin?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> = ({
   $imagecircular,
   width,
   height,
-  horizontalmargin,
+  $horizontalmargin,
 }) => {
   return (
     <ImageContainer>
@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({
         width={width}
         height={height}
         $imagecircular={$imagecircular}
-        horizontalmargin={horizontalmargin}
+        $horizontalmargin={$horizontalmargin}
       />
     </ImageContainer>
   );
@@ -36,8 +36,8 @@ const Card: React.FC<CardProps> = ({
 const Image = styled.img<ImageProps>`
   width: ${({ width }) => width ?? "500px"};
   height: ${({ height }) => height ?? "100%"};
-  ${({ horizontalmargin }) =>
-    horizontalmargin ? `margin: 0 ${horizontalmargin};` : ""}
+  ${({ $horizontalmargin }) =>
+    $horizontalmargin ? `margin: 0 ${$horizontalmargin};` : ""}
   object-fit: cover;
   border-radius: ${({ $imagecircular }) => ($imagecircular ? "50%" : "0")};
 `;
