@@ -1,5 +1,5 @@
 "use client";
-import { defaultTheme } from "./theme/defaultTheme";
+import { defaultTheme } from "../theme/defaultTheme";
 import { createGlobalStyle } from "styled-components";
 
 interface Breakpoints {
