@@ -1,9 +1,9 @@
 "use client";
+import FacebookContainer from "@/components/Facebook/FacebookContainer";
 import FullScreenImageContainer from "@/components/FullScreenImage/FullScreenImageContainer";
 import InfiniteCarouselContainer from "@/components/InfiniteCarousel/InfiniteCarouselContainer";
-import PageBuilder from "@/components/PageBuilder";
+import SectionBannerContainer from "@/components/SectionBanner/SectionBannerContainer";
 import homeQuery from "@/library/confluence/homeQuery";
-import homeData from "@/library/data/home";
 import useGetHomePage from "@/library/hooks/useGetHomePage";
 
 const Page = () => {
@@ -12,7 +12,8 @@ const Page = () => {
     <>
       <FullScreenImageContainer />
       <InfiniteCarouselContainer />
-      <PageBuilder data={homeData} />;
+      <SectionBannerContainer />
+      <FacebookContainer />
     </>
   );
 };

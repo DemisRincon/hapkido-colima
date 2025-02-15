@@ -16,6 +16,9 @@ export interface RootState {
         }[];
       };
     };
+    SimpleBanner: {
+      text: string;
+    };
   };
 }
 
@@ -35,6 +38,9 @@ const homeReducer = createSlice({
         imagesCollection: {
           items: [],
         },
+      },
+      SimpleBanner: {
+        text: "",
       },
     },
   },
