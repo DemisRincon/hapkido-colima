@@ -1,9 +1,8 @@
-import StyledComponentsRegistry from "@/library/providers/registry";
 import { Metadata } from "next";
 import Script from "next/script";
-import GlobalThemeWrapper from "@/library/providers/GlobalTheme";
 import MainLayout from "@/components/MainLayout";
 import Providers from "@/library/providers/Providers";
+import LayoutContainer from "@/components/MainLayout/LayoutContainer";
 
 export const metadata: Metadata = {
   title: "Hapkido defensa personal",
@@ -26,7 +25,7 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>
-          <MainLayout>{children}</MainLayout>
+          <LayoutContainer>{children}</LayoutContainer>
         </Providers>
       </body>
     </html>

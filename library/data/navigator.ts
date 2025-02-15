@@ -16,37 +16,32 @@ export const navData = {
   ],
   footerContent: {
     content: [
-      {
-        data: [
-          {
-            text: "Pagina creada por Demis Rincon darmfma@gmail.com",
-            icon: FaPerson,
-          },
-        ],
-      },
-      {
-        data: [
-          {
-            image: logo.src,
-          },
-        ],
-      },
-      {
-        data: [
-          {
-            icon: GoLocation,
-            text: "Almolonia 99-2do piso,",
-          },
-          {
-            icon: BiPhone,
-            text: "312 111 1111",
-          },
-          {
-            icon: FiMail,
-            text: "hapkido@gmail.com",
-          },
-        ],
-      },
+      [
+        {
+          text: "Pagina creada por Demis Rincon darmfma@gmail.com",
+          icon: FaPerson,
+        },
+      ],
+
+      [
+        {
+          image: logo.src,
+        },
+      ],
+      [
+        {
+          icon: GoLocation,
+          text: "Almolonia 99-2do piso,",
+        },
+        {
+          icon: BiPhone,
+          text: "312 111 1111",
+        },
+        {
+          icon: FiMail,
+          text: "hapkido@gmail.com",
+        },
+      ],
     ],
     bottom: "© 2021 Hapkido. Todos los derechos reservados.",
   },
