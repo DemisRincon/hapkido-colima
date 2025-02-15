@@ -1,4 +1,3 @@
-import { navData } from "@/library/data/navigator";
 import React from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
@@ -26,11 +25,11 @@ const MobileNav: React.FC<MobileNavProps> = ({
             <CgClose size={32} />
           </CloseButton>
           <NavList onClick={toggleMobileNav}>
-            {navData.links.map((item, index) => (
+            {/* {navData.links.map((item, index) => (
               <NavItem key={index}>
                 <NavLink href={item.href}>{item.label}</NavLink>
               </NavItem>
-            ))}
+            ))} */}
           </NavList>
         </NavContainer>
       )}

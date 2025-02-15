@@ -1,9 +1,7 @@
-import StyledComponentsRegistry from "@/library/registry";
 import { Metadata } from "next";
 import Script from "next/script";
-import GlobalThemeWrapper from "@/library/GlobalTheme";
-import GlobalStyles from "@/library/GlobalStyles";
-import MainLayout from "@/components/MainLayout";
+import Providers from "@/library/providers/Providers";
+import LayoutContainer from "@/components/MainLayout/LayoutContainer";
 
 export const metadata: Metadata = {
   title: "Hapkido defensa personal",
@@ -25,12 +23,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <StyledComponentsRegistry>
-          <GlobalStyles />
-          <GlobalThemeWrapper>
-            <MainLayout>{children}</MainLayout>
-          </GlobalThemeWrapper>
-        </StyledComponentsRegistry>
+        <Providers>
+          <LayoutContainer>{children}</LayoutContainer>
+        </Providers>
       </body>
     </html>
   );

@@ -3,8 +3,8 @@
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import React from "react";
-import { useLocalStorage } from "./hooks/useLocalStorage";
-import { defaultTheme } from "./theme/defaultTheme";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+import { defaultTheme } from "../theme/defaultTheme";
 
 interface GlobalThemeWrapperProps {
   children: React.ReactNode;
