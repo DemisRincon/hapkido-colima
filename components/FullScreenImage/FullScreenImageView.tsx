@@ -64,26 +64,23 @@ const itemVariants = {
 const FullScreenImageView: React.FC<FullScreenImageProps> = ({
   image,
   text,
-}) => {
-  console.log(image, text);
-  return (
-    <WrapperFadeOnView>
-      <ContainerBackgroundImage $image={image}>
-        <BlurrScreen
-          initial="hidden"
-          animate="visible"
-          exit={{ opacity: 0, transition: { duration: 1 } }}
-          variants={{ visible: { transition: { staggerChildren: 0.6 } } }}
-        >
-          <Content>
-            <StyledH1 variants={itemVariants}>
-              <Strong color="white">{text}</Strong>
-            </StyledH1>
-          </Content>
-        </BlurrScreen>
-      </ContainerBackgroundImage>
-    </WrapperFadeOnView>
-  );
-};
+}) => (
+  <WrapperFadeOnView>
+    <ContainerBackgroundImage $image={image}>
+      <BlurrScreen
+        initial="hidden"
+        animate="visible"
+        exit={{ opacity: 0, transition: { duration: 1 } }}
+        variants={{ visible: { transition: { staggerChildren: 0.6 } } }}
+      >
+        <Content>
+          <StyledH1 variants={itemVariants}>
+            <Strong color="white">{text}</Strong>
+          </StyledH1>
+        </Content>
+      </BlurrScreen>
+    </ContainerBackgroundImage>
+  </WrapperFadeOnView>
+);
 
 export default FullScreenImageView;

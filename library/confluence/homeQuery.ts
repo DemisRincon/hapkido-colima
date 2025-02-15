@@ -13,6 +13,21 @@ query{
                 url
               }
             }
+            ...on Carousel{
+              __typename
+              text
+              imagesCollection{
+                items {
+                  url
+                }
+              }
+            }
+            ...on SimpleBanner{
+              __typename
+              text
+            }
+
+            
           }
         }
       }

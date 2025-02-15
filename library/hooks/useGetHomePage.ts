@@ -10,12 +10,10 @@ const useGetHomePage = (query: string) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("useGetHomePage");
     fetchData(query)
       .then((res) => res.json())
       .then((res) => {
         let HomeData: { [key: string]: Record<string, unknown> } = {};
-
         res.data.pageCollection.items[0].componentsCollection.items.forEach(
           (item: { [x: string]: unknown; __typename: string }) => {
             const { __typename, ...rest } = item;
@@ -23,7 +21,6 @@ const useGetHomePage = (query: string) => {
           }
         );
 
-        console.log(HomeData);
         dispatch(setPage(HomeData));
         setData(res.data);
         setLoading(false);

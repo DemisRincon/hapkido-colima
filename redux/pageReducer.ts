@@ -8,6 +8,14 @@ export interface RootState {
       };
       text: string;
     };
+    Carousel: {
+      text: string;
+      imagesCollection: {
+        items: {
+          url: string;
+        }[];
+      };
+    };
   };
 }
 
@@ -15,7 +23,20 @@ const homeReducer = createSlice({
   name: "home",
   initialState: {
     name: "Home",
-    pages: {},
+    pages: {
+      HeroBackgroundImage: {
+        image: {
+          url: "",
+        },
+        text: "",
+      },
+      Carousel: {
+        text: "",
+        imagesCollection: {
+          items: [],
+        },
+      },
+    },
   },
   reducers: {
     setPage: (state, action) => {
