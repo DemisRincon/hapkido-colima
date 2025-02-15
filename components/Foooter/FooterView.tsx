@@ -12,7 +12,6 @@ const FooterView: React.FC<FooterViewProps> = ({
   bottomMessage,
   footerLinks,
 }) => {
-  console.log(footerLinks);
   return (
     <BottomContainer>
       <WrapperFadeOnView>

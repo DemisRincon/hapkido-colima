@@ -22,7 +22,7 @@ const LayoutView: React.FC<LayoutViewProps> = ({ children }) => {
 
 const Container = styled.div`
   max-width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

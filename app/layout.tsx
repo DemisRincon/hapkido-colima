@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Script from "next/script";
-import MainLayout from "@/components/MainLayout";
 import Providers from "@/library/providers/Providers";
 import LayoutContainer from "@/components/MainLayout/LayoutContainer";
 
