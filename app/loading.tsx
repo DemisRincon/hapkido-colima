@@ -8,7 +8,7 @@ const spinnerAnimation = keyframes`
   100% { transform: rotate(360deg); }
 `;
 
-export const SpinnerContainer = styled(motion.div)`
+const SpinnerContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,14 +20,14 @@ export const SpinnerContainer = styled(motion.div)`
   right: 0;
   bottom: 0;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.white}; /* #FFFFFF */
+  background-color: ${({ theme }) => theme.colors.white};
   z-index: 1000;
   overflow: hidden;
 `;
 
-export const Spinner = styled.div`
-  border: 16px solid ${({ theme }) => theme.colors.grey}; /* #e9e7e4 */
-  border-top: 16px solid ${({ theme }) => theme.colors.lightBlue}; /* #117DBF */
+const Spinner = styled.div`
+  border: 16px solid ${({ theme }) => theme.colors.grey};
+  border-top: 16px solid ${({ theme }) => theme.colors.lightBlue};
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -38,13 +38,13 @@ export const Spinner = styled.div`
   }
 `;
 
-export const LoadingText = styled.h1`
+const LoadingText = styled.h1`
   margin-top: 20px;
   color: ${({ theme }) => theme.colors.darkBlue}; /* #2A3659 */
   letter-spacing: 0.5rem;
 `;
 
-const Loading = () => {
+const LoadingComponent = () => {
   const containerAnimation = {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
@@ -59,4 +59,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default LoadingComponent;

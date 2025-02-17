@@ -28,6 +28,7 @@ const Facebook: React.FC<FacebookProps> = ({ title }) => {
       <Container>
         <H4>{title}</H4>
         <Iframe
+          title="Facebook"
           src={process.env.NEXT_PUBLIC_FB}
           width="340"
           height="500"

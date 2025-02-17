@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { FC } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
@@ -32,7 +32,7 @@ const StyledLink = styled.a`
   }
 `;
 
-const NotFound: React.FC = () => {
+const NotFound: FC = () => {
   return (
     <Container>
       <Title>404</Title>
