@@ -5,8 +5,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Hapkido Colima",
   description:
-    "Experience world-class Hapkido martial arts training in Colima, blending tradition with modern expertise.",
-  keywords: ["Hapkido", "Colima", "Martial Arts", "Self Defense", "Training"],
+    "Disfruta de entrenamiento de Hapkido de clase mundial en Colima, combinando tradición y modernidad, diseñado especialmente para el público mexicano.",
+  keywords: [
+    "Hapkido",
+    "Colima",
+    "Artes Marciales",
+    "Defensa Personal",
+    "Entrenamiento",
+  ],
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
