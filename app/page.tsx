@@ -1,62 +1,51 @@
 "use client";
 
-import React, { Suspense, lazy, useMemo } from "react";
+import React, { Suspense } from "react";
 import { useSelector } from "react-redux";
+import FullScreenImage from "@/components/FullScreenImage";
+import InfiniteCarousel from "@/components/InfiniteCarousel";
+import Testimonials from "@/components/Testimonials";
+import LetterBanner from "@/components/LetterBanner";
 import useGetPageData, { Pages } from "@/lib/hooks/useGetPageData";
-import { RootState, DataType } from "@/lib/redux/store";
+import { DataType } from "@/lib/redux/initialStates";
+import Facebook from "@/components/Facebook";
 
-const FullScreenImage = lazy(() => import("@/components/FullScreenImage"));
-const InfiniteCarousel = lazy(() => import("@/components/InfiniteCarousel"));
-const Testimonials = lazy(() => import("@/components/Testimonials"));
-const LetterBanner = lazy(() => import("@/components/LetterBanner"));
-const Facebook = lazy(() => import("@/components/Facebook"));
+interface RootState {
+  home: {
+    isLoading: boolean;
+    data: DataType[];
+  };
+}
 
-const Page: React.FC = () => {
+const Page = () => {
   useGetPageData(Pages.HOME);
-
-  const data = useSelector((state: RootState) => state.home.data);
-  const [
-    fullScreenImageData,
-    infiniteCarouselData,
-    sectionBannerData,
-    testimonialsData,
-  ] = data;
-
-  const memoizedFullScreenImageData = useMemo(
-    () => fullScreenImageData,
-    [fullScreenImageData]
-  );
-  const memoizedInfiniteCarouselData = useMemo(
-    () => infiniteCarouselData,
-    [infiniteCarouselData]
-  );
-  const memoizedSectionBannerData = useMemo(
-    () => sectionBannerData,
-    [sectionBannerData]
-  );
-  const memoizedTestimonialsData = useMemo(
-    () => testimonialsData,
-    [testimonialsData]
-  );
+  const {
+    data: [
+      fullScreenImageData,
+      infiniteCarouselData,
+      sectionBannerData,
+      testimonialsData,
+    ],
+  } = useSelector((state: RootState) => state.home);
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <FullScreenImage
-        image={memoizedFullScreenImageData.image.url}
-        text={memoizedFullScreenImageData.text}
+        image={fullScreenImageData.image.url}
+        text={fullScreenImageData.text}
       />
       <InfiniteCarousel
-        images={memoizedInfiniteCarouselData.imagesCollection?.items || []}
-        title={memoizedInfiniteCarouselData.text ?? ""}
+        images={infiniteCarouselData.imagesCollection?.items || []}
+        title={infiniteCarouselData.text ?? ""}
       />
-      <LetterBanner title={memoizedSectionBannerData.text} fontSize="h3" />
+      <LetterBanner title={sectionBannerData.text} fontSize="h3" />
       <Facebook title="Siguenos en facebook" />
       <Testimonials
-        testimonials={memoizedTestimonialsData.testimonials || []}
-        title={memoizedTestimonialsData.text}
+        testimonials={testimonialsData.testimonials || []}
+        title={testimonialsData.text}
       />
     </Suspense>
   );
 };
 
-export default React.memo(Page);
+export default Page;
