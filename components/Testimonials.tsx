@@ -12,12 +12,17 @@ interface TestimonialsViewProps {
 const OuterContainer = styled.div`
   background: ${({ theme }) => theme.colors.grey};
   padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
 
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     grid-template-columns: repeat(2, 1fr);
@@ -30,7 +35,7 @@ const Container = styled.div`
 
 const Card = styled.div`
   background: ${({ theme }) => theme.colors.white};
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
