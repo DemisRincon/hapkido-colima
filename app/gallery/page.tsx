@@ -24,8 +24,6 @@ const Page = () => {
         images={galleryImagesGrid.imagesCollection?.items || []}
         name={galleryImagesGrid.name}
         columns="1fr 1fr 1fr"
-        photoheight="300px"
-        photowidth="400px"
       />
     </Suspense>
   );

@@ -26,8 +26,6 @@ const Page = () => {
         images={locationImagesGallery.imagesCollection?.items || []}
         name={locationImagesGallery.name}
         columns="1fr 1fr 1fr"
-        photoheight="300px"
-        photowidth="400px"
       />
     </Suspense>
   );
