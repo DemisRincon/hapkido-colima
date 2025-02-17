@@ -3,7 +3,7 @@ import { FooterLink } from "./FooterContainer";
 import WrapperFadeOnView from "../../WrapperFadeOnView";
 import styled from "styled-components";
 import Icon from "../../Icon";
-import Image from "next/image";
+
 interface FooterViewProps {
   bottomMessage: string;
   footerLinks: FooterLink[][];
@@ -90,7 +90,7 @@ const Span = styled.span`
   margin: 1rem 0.5rem;
 `;
 
-const StyledImage = styled(Image)`
+const StyledImage = styled.img`
   width: 100px;
   height: auto;
 `;

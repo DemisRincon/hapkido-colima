@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { H2 } from "./styled";
 import WrapperFadeOnView from "./WrapperFadeOnView";
-import Image from "next/image";
 
 export interface SectionSideImageProps {
   title: string;
@@ -35,7 +34,7 @@ const HeadSection = styled.div<{ $column?: boolean }>`
     margin: 0;
   }
 `;
-const HeadImage = styled(Image)<{ $roundedimage?: boolean; $column?: boolean }>`
+const HeadImage = styled.img<{ $roundedimage?: boolean; $column?: boolean }>`
   border-radius: ${({ $roundedimage }) => ($roundedimage ? "50%" : "0")};
   margin-top: ${({ $column }) => ($column ? "3rem" : "0")};
   width: auto;
@@ -68,7 +67,6 @@ const SectionSideImage: React.FC<SectionSideImageProps> = ({
               alt={title}
               width={500}
               height={500}
-              priority
             />
           )}
         </HeadSection>

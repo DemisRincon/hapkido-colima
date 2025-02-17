@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import styled from "styled-components";
 
 interface CardProps extends ImageProps {
@@ -13,7 +13,7 @@ interface ImageProps {
   horizontalmargin?: string;
 }
 
-const ImageStyled = styled(Image)<ImageProps>`
+const ImageStyled = styled.img<ImageProps>`
   ${({ horizontalmargin }) =>
     horizontalmargin ? `margin: 0 ${horizontalmargin};` : ""}
   object-fit: cover;
@@ -40,7 +40,6 @@ const Card: React.FC<CardProps> = ({
         height={height}
         $imagecircular={$imagecircular}
         horizontalmargin={horizontalmargin}
-        priority
       />
     </ImageContainer>
   );
