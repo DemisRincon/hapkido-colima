@@ -20,10 +20,12 @@ const Page = () => {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <ButtonsScreen
-        title={contactButtons.name}
-        buttons={contactButtons.buttons || []}
-      />
+      {contactButtons && (
+        <ButtonsScreen
+          title={contactButtons.name}
+          buttons={contactButtons?.buttons || []}
+        />
+      )}
     </Suspense>
   );
 };

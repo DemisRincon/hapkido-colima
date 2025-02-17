@@ -22,11 +22,13 @@ const Page = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Maps title="Ubicación" url={process.env.NEXT_PUBLIC_MAPS || "/"} />
-      <ImagesGrid
-        images={locationImagesGallery.imagesCollection?.items || []}
-        name={locationImagesGallery.name}
-        columns="1fr 1fr 1fr"
-      />
+      {locationImagesGallery?.imagesCollection?.items.length && (
+        <ImagesGrid
+          images={locationImagesGallery?.imagesCollection?.items || []}
+          name={locationImagesGallery.name}
+          columns="1fr 1fr 1fr"
+        />
+      )}
     </Suspense>
   );
 };

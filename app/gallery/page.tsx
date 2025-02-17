@@ -20,11 +20,13 @@ const Page = () => {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <ImagesGrid
-        images={galleryImagesGrid.imagesCollection?.items || []}
-        name={galleryImagesGrid.name}
-        columns="1fr 1fr 1fr"
-      />
+      {galleryImagesGrid.imagesCollection?.items.length && (
+        <ImagesGrid
+          images={galleryImagesGrid?.imagesCollection?.items || []}
+          name={galleryImagesGrid?.name}
+          columns="1fr 1fr 1fr"
+        />
+      )}
     </Suspense>
   );
 };
