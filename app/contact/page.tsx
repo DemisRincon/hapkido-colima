@@ -17,7 +17,7 @@ const Page = () => {
   const {
     data: [contactButtons],
   } = useSelector((state: RootState) => state.contact);
-  console.log(contactButtons);
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <ButtonsScreen
