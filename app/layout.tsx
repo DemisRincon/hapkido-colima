@@ -4,7 +4,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Hapkido Colima",
-  description: "Hapkido Colima",
+  description:
+    "Experience world-class Hapkido martial arts training in Colima, blending tradition with modern expertise.",
+  keywords: ["Hapkido", "Colima", "Martial Arts", "Self Defense", "Training"],
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
