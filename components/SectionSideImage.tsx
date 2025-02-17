@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { H2 } from "./styled";
 import WrapperFadeOnView from "./WrapperFadeOnView";
+import Image from "next/image";
 
 export interface SectionSideImageProps {
   title: string;
@@ -35,7 +36,7 @@ const HeadSection = styled.div<{ $column?: boolean }>`
   }
 `;
 
-const HeadImage = styled.img.attrs<{
+const HeadImage = styled(Image).attrs<{
   $roundedimage?: boolean;
   $column?: boolean;
 }>(({ $roundedimage, $column }) => ({

@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "../../styled";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Image from "next/image";
 
 interface HeaderViewProps {
   y: MotionValue<number>;
@@ -87,7 +88,7 @@ const SolidBackground = styled(motion.div)`
   z-index: -2;
 `;
 
-const Logo = styled.img`
+const Logo = styled(Image)`
   height: 90%;
   width: auto;
 `;

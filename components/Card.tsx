@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import styled from "styled-components";
 
 interface CardProps extends ImageProps {
@@ -12,7 +13,7 @@ interface ImageProps {
   horizontalmargin?: string;
 }
 
-const Image = styled.img<ImageProps>`
+const ImageStyled = styled(Image)<ImageProps>`
   width: ${({ width }) => width ?? "500px"};
   height: ${({ height }) => height ?? "100%"};
   ${({ horizontalmargin }) =>
@@ -34,7 +35,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <ImageContainer>
-      <Image
+      <ImageStyled
         src={image}
         alt="Hapkido"
         width={width}

@@ -3,6 +3,7 @@ import { FooterLink } from "./FooterContainer";
 import WrapperFadeOnView from "../../WrapperFadeOnView";
 import styled from "styled-components";
 import Icon from "../../Icon";
+import Image from "next/image";
 interface FooterViewProps {
   bottomMessage: string;
   footerLinks: FooterLink[][];
@@ -25,7 +26,7 @@ const FooterView: React.FC<FooterViewProps> = ({
                     <Span>{element?.text}</Span>
 
                     {element?.image && (
-                      <Image src={element?.image} alt="footer" />
+                      <StyledImage src={element?.image} alt="footer" />
                     )}
                   </ItemContainer>
                 ))}
@@ -84,7 +85,7 @@ const Span = styled.span`
   margin: 1rem 0.5rem;
 `;
 
-const Image = styled.img`
+const StyledImage = styled(Image)`
   width: 100px;
   height: auto;
 `;
