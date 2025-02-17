@@ -35,22 +35,16 @@ const HeadSection = styled.div<{ $column?: boolean }>`
     margin: 0;
   }
 `;
-
-const HeadImage = styled(Image).attrs<{
-  $roundedimage?: boolean;
-  $column?: boolean;
-}>(({ $roundedimage, $column }) => ({
-  style: {
-    borderRadius: $roundedimage ? "50%" : "0",
-    marginTop: $column ? "3rem" : "0",
-  },
-}))`
-  max-width: 90%;
+const HeadImage = styled(Image)<{ $roundedimage?: boolean; $column?: boolean }>`
+  border-radius: ${({ $roundedimage }) => ($roundedimage ? "50%" : "0")};
+  margin-top: ${({ $column }) => ($column ? "3rem" : "0")};
+  width: auto;
   height: auto;
+
   object-fit: contain;
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     height: 500px;
-    width: auto;
+    width: 500px;
   }
 `;
 
@@ -72,6 +66,9 @@ const SectionSideImage: React.FC<SectionSideImageProps> = ({
               $column={$column}
               src={image}
               alt={title}
+              width={500}
+              height={500}
+              priority
             />
           )}
         </HeadSection>

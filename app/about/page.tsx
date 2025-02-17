@@ -40,7 +40,6 @@ const Page = () => {
       <Article
         name={ArticleData.name}
         imagecircular={ArticleData.imageCircular}
-        imagewidth={ArticleData.imageWidth}
         content={ArticleData.content}
         image={ArticleData.image.url}
       />

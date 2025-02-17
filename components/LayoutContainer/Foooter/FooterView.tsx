@@ -26,7 +26,12 @@ const FooterView: React.FC<FooterViewProps> = ({
                     <Span>{element?.text}</Span>
 
                     {element?.image && (
-                      <StyledImage src={element?.image} alt="footer" />
+                      <StyledImage
+                        src={element?.image}
+                        alt="footer"
+                        width={100}
+                        height={100}
+                      />
                     )}
                   </ItemContainer>
                 ))}

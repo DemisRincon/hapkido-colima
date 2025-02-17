@@ -8,14 +8,12 @@ interface CardProps extends ImageProps {
 
 interface ImageProps {
   $imagecircular?: boolean;
-  width?: string;
-  height?: string;
+  width?: number;
+  height?: number;
   horizontalmargin?: string;
 }
 
 const ImageStyled = styled(Image)<ImageProps>`
-  width: ${({ width }) => width ?? "500px"};
-  height: ${({ height }) => height ?? "100%"};
   ${({ horizontalmargin }) =>
     horizontalmargin ? `margin: 0 ${horizontalmargin};` : ""}
   object-fit: cover;
@@ -29,8 +27,8 @@ const ImageContainer = styled.div`
 const Card: React.FC<CardProps> = ({
   image,
   $imagecircular,
-  width,
-  height,
+  width = 500,
+  height = 300,
   horizontalmargin,
 }) => {
   return (
@@ -42,6 +40,7 @@ const Card: React.FC<CardProps> = ({
         height={height}
         $imagecircular={$imagecircular}
         horizontalmargin={horizontalmargin}
+        priority
       />
     </ImageContainer>
   );

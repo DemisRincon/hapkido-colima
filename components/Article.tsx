@@ -10,7 +10,6 @@ export interface ArticleProps {
   image: string;
   content: string[];
   imagecircular: boolean;
-  imagewidth: string;
 }
 
 const Container = styled.div`
@@ -26,7 +25,6 @@ const Article: React.FC<ArticleProps> = ({
   content,
   image,
   imagecircular,
-  imagewidth,
 }) => {
   return (
     <Container>
@@ -36,7 +34,8 @@ const Article: React.FC<ArticleProps> = ({
           <CardView
             image={image}
             $imagecircular={imagecircular}
-            width={imagewidth}
+            width={400}
+            height={400}
           />
         )}
       </WrapperFadeOnView>

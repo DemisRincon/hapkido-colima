@@ -9,8 +9,6 @@ export interface GridProps {
   images: { url: string }[];
   rows?: string;
   columns?: string;
-  photoheight?: string;
-  photowidth?: string;
 }
 
 const GridContainer = styled.div<{ rows?: string; $columns?: string }>`
@@ -45,8 +43,6 @@ const ImagesGrid: React.FC<GridProps> = ({
   images,
   rows,
   columns,
-  photoheight,
-  photowidth,
 }) => {
   return (
     <Container>
@@ -57,11 +53,7 @@ const ImagesGrid: React.FC<GridProps> = ({
         {images &&
           images?.map(({ url }, index) => (
             <WrapperFadeOnView key={index}>
-              <GridItem>
-                {url && (
-                  <Card image={url} height={photoheight} width={photowidth} />
-                )}
-              </GridItem>
+              <GridItem>{url && <Card image={url} />}</GridItem>
             </WrapperFadeOnView>
           ))}
       </GridContainer>

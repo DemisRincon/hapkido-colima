@@ -28,7 +28,7 @@ const HeaderView: React.FC<HeaderViewProps> = ({
     >
       <GradientEffect style={{ y }} />
       <SolidBackground style={{ opacity, y }} />
-      {logo && <Logo src={logo} alt="logo" />}
+      {logo && <Logo src={logo} alt="logo" width={100} height={100} />}
       <Nav>
         {nav.map((item) => (
           <NavLink key={item.link} href={item.link}>
@@ -88,7 +88,10 @@ const SolidBackground = styled(motion.div)`
   z-index: -2;
 `;
 
-const Logo = styled(Image)`
+const Logo = styled(Image).attrs({
+  width: 100, // specify the width
+  height: 100, // specify the height
+})`
   height: 90%;
   width: auto;
 `;

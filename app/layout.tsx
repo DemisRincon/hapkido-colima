@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Hapkido Colima",
     description:
       "Disfruta de entrenamiento de Hapkido de clase mundial en Colima, combinando tradición y modernidad, diseñado especialmente para el público mexicano.",
-    url: "https://www.hapkidocolima.com",
+    url: "https://www.hapkidocolima.com.mx",
     siteName: "Hapkido Colima",
     images: [
       {
@@ -47,6 +47,7 @@ export const metadata: Metadata = {
       "Disfruta de entrenamiento de Hapkido de clase mundial en Colima, combinando tradición y modernidad, diseñado especialmente para el público mexicano.",
     images: ["/og-image.jpg"],
   },
+  metadataBase: new URL("https://www.hapkidocolima.com.mx"),
 };
 
 export default function RootLayout({
