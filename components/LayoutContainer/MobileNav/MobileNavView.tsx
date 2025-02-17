@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavLink } from "../../styled";
 import { CgClose } from "react-icons/cg";
-import { useSelector } from "react-redux";
 
 interface MobileNavProps {
   isMobileNavOpen: boolean;
