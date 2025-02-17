@@ -23,6 +23,30 @@ export const metadata: Metadata = {
       { url: "/favicon-16x16.png", sizes: "16x16" },
     ],
   },
+  openGraph: {
+    title: "Hapkido Colima",
+    description:
+      "Disfruta de entrenamiento de Hapkido de clase mundial en Colima, combinando tradición y modernidad, diseñado especialmente para el público mexicano.",
+    url: "https://www.hapkidocolima.com",
+    siteName: "Hapkido Colima",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hapkido Colima",
+      },
+    ],
+    locale: "es_MX",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hapkido Colima",
+    description:
+      "Disfruta de entrenamiento de Hapkido de clase mundial en Colima, combinando tradición y modernidad, diseñado especialmente para el público mexicano.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -31,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body>
         <Providers>
           <LayoutContainer>{children}</LayoutContainer>
