@@ -4,14 +4,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { setIsMobileNavOpen } from "@/lib/redux/navigatorReducer";
 
 interface MenuContainerSelector {
-  navigator: { isMobileNavOpen: boolean };
+  navigator: {
+    isMobileNavOpen: boolean;
+    nav: {
+      link: string;
+      name: string;
+    }[];
+  };
 }
 
 const MenuContainer = () => {
   const dispatch = useDispatch();
-
-  const isMobileNavOpen = useSelector(
-    (state: MenuContainerSelector) => state.navigator.isMobileNavOpen
+  const { nav, isMobileNavOpen } = useSelector(
+    (state: MenuContainerSelector) => state.navigator
   );
 
   const toggleMobileNav = () => {
@@ -22,6 +27,7 @@ const MenuContainer = () => {
     <MobileNav
       toggleMobileNav={toggleMobileNav}
       isMobileNavOpen={isMobileNavOpen}
+      nav={nav}
     />
   );
 };

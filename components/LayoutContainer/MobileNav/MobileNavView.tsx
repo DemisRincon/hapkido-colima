@@ -8,23 +8,17 @@ import { useSelector } from "react-redux";
 interface MobileNavProps {
   isMobileNavOpen: boolean;
   toggleMobileNav: () => void;
-}
-
-interface RootState {
-  navigator: {
-    nav: {
-      link: string;
-      name: string;
-    }[];
-  };
+  nav: {
+    link: string;
+    name: string;
+  }[];
 }
 
 const MobileNav: React.FC<MobileNavProps> = ({
   isMobileNavOpen,
   toggleMobileNav,
+  nav,
 }) => {
-  const { nav } = useSelector((state: RootState) => state.navigator);
-
   return (
     <AnimatePresence>
       {isMobileNavOpen && (
