@@ -51,9 +51,9 @@ const ImagesGrid: React.FC<GridProps> = ({
       </WrapperFadeOnView>
       <GridContainer rows={rows} $columns={columns}>
         {images &&
-          images?.map(({ url }, index) => (
+          images?.map((image, index) => (
             <WrapperFadeOnView key={index}>
-              <GridItem>{url && <Card image={url} />}</GridItem>
+              <GridItem>{image?.url && <Card image={image.url} />}</GridItem>
             </WrapperFadeOnView>
           ))}
       </GridContainer>

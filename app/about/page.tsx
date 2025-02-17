@@ -33,35 +33,35 @@ const Page = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <SectionSideImage
-        image={HeroSideTopData.image.url}
-        title={HeroSideTopData.text}
+        image={HeroSideTopData?.image?.url}
+        title={HeroSideTopData?.text}
         bgcolor="grey"
       />
       <Article
-        name={ArticleData.name}
-        imagecircular={ArticleData.imageCircular}
-        content={ArticleData.content}
-        image={ArticleData.image.url}
+        name={ArticleData?.name}
+        imagecircular={ArticleData?.imageCircular}
+        content={ArticleData?.content}
+        image={ArticleData?.image?.url}
       />
-      <LetterBanner title={SectionBannerData.text} fontSize="h3" />
+      <LetterBanner title={SectionBannerData?.text} fontSize="h3" />
       <SectionBanner
-        name={SectionBanner1.name}
-        content={SectionBanner1.content}
+        name={SectionBanner1?.name}
+        content={SectionBanner1?.content}
         bgcolor="white"
       />
       <SectionBanner
-        name={SectionBanner2.name}
-        content={SectionBanner2.content}
+        name={SectionBanner2?.name}
+        content={SectionBanner2?.content}
         bgcolor="white"
       />
       <SectionBanner
-        name={SectionBanner3.name}
-        content={SectionBanner3.content}
+        name={SectionBanner3?.name}
+        content={SectionBanner3?.content}
         bgcolor="white"
       />
       <ImagesGrid
-        images={ImgGrid.imagesCollection?.items}
-        name={ImgGrid.name ?? ""}
+        images={ImgGrid?.imagesCollection?.items}
+        name={ImgGrid?.name ?? ""}
       />
     </Suspense>
   );
