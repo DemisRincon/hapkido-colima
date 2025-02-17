@@ -1,18 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
-import { NavLink } from "../cells/styled";
+import { NavLink } from "../../styled";
 import { CgClose } from "react-icons/cg";
+import { useSelector } from "react-redux";
 
 interface MobileNavProps {
   isMobileNavOpen: boolean;
   toggleMobileNav: () => void;
 }
 
+interface RootState {
+  navigator: {
+    nav: {
+      link: string;
+      name: string;
+    }[];
+  };
+}
+
 const MobileNav: React.FC<MobileNavProps> = ({
   isMobileNavOpen,
   toggleMobileNav,
 }) => {
+  const { nav } = useSelector((state: RootState) => state.navigator);
+
   return (
     <AnimatePresence>
       {isMobileNavOpen && (
@@ -25,11 +37,11 @@ const MobileNav: React.FC<MobileNavProps> = ({
             <CgClose size={32} />
           </CloseButton>
           <NavList onClick={toggleMobileNav}>
-            {/* {navData.links.map((item, index) => (
+            {nav.map((item, index) => (
               <NavItem key={index}>
-                <NavLink href={item.href}>{item.label}</NavLink>
+                <NavLink href={item.link}>{item.name}</NavLink>
               </NavItem>
-            ))} */}
+            ))}
           </NavList>
         </NavContainer>
       )}
