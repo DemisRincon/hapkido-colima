@@ -9,21 +9,6 @@ import useGetNavigation from "@/lib/hooks/useGetNav";
 interface LayoutViewProps {
   children: ReactNode;
 }
-
-const LayoutView: React.FC<LayoutViewProps> = ({ children }) => {
-  useGetNavigation();
-  return (
-    <Container>
-      <Suspense fallback={<div>Loading...</div>}>
-        <HeaderContainer />
-        <MenuContainer />
-        {children}
-        <FooterContainer />
-      </Suspense>
-    </Container>
-  );
-};
-
 const Container = styled.div`
   max-width: 100vw;
   min-height: 100vh;
@@ -32,5 +17,25 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+const InnerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+`;
+
+const LayoutView: React.FC<LayoutViewProps> = ({ children }) => {
+  useGetNavigation();
+  return (
+    <Container>
+      <Suspense fallback={<div>Loading...</div>}>
+        <HeaderContainer />
+        <MenuContainer />
+        <InnerContainer>{children}</InnerContainer>
+        <FooterContainer />
+      </Suspense>
+    </Container>
+  );
+};
 
 export default LayoutView;
