@@ -1,3 +1,4 @@
+"use client";
 import WrapperFadeOnView from "./WrapperFadeOnView";
 import styled from "styled-components";
 import { motion } from "framer-motion";

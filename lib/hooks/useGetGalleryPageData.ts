@@ -23,7 +23,6 @@ const useGetGalleryPageData = () => {
           throw new Error(`Network response was not ok: ${res.statusText}`);
         }
         const jsonData = await res.json();
-        console.log(jsonData);
         dispatch(setGalleryPage(jsonData));
       } catch (err) {
         if (!(err instanceof DOMException && err.name === "AbortError")) {
