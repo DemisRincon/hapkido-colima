@@ -35,7 +35,7 @@ export async function GET(request: Request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ query }),
-        cache: "no-store",
+        cache: "no-cache",
       }
     );
 
