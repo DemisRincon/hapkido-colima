@@ -6,9 +6,9 @@ import FullScreenImage from "@/components/FullScreenImage";
 import InfiniteCarousel from "@/components/InfiniteCarousel";
 import Testimonials from "@/components/Testimonials";
 import LetterBanner from "@/components/LetterBanner";
-import useGetPageData, { Pages } from "@/lib/hooks/useGetPageData";
 import { DataType } from "@/lib/redux/initialStates";
 import Facebook from "@/components/Facebook";
+import useGetHomePageData from "@/lib/hooks/useGetHomePageData";
 
 interface RootState {
   home: {
@@ -18,7 +18,7 @@ interface RootState {
 }
 
 const Page = () => {
-  useGetPageData(Pages.HOME);
+  useGetHomePageData();
   const {
     data: [
       fullScreenImageData,

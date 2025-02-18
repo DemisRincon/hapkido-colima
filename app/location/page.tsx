@@ -1,7 +1,7 @@
 "use client";
 import ImagesGrid from "@/components/ImagesGrid";
 import Maps from "@/components/Maps";
-import useGetPageData, { Pages } from "@/lib/hooks/useGetPageData";
+import useGetLocationPageData from "@/lib/hooks/useGetLocationPageData";
 import { DataType } from "@/lib/redux/initialStates";
 import React, { Suspense } from "react";
 import { useSelector } from "react-redux";
@@ -14,7 +14,7 @@ interface RootState {
 }
 
 const Page = () => {
-  useGetPageData(Pages.LOCATION);
+  useGetLocationPageData();
   const {
     data: [locationImagesGallery],
   } = useSelector((state: RootState) => state.location);

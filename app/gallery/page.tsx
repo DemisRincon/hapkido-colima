@@ -1,6 +1,6 @@
 "use client";
 import ImagesGrid from "@/components/ImagesGrid";
-import useGetPageData, { Pages } from "@/lib/hooks/useGetPageData";
+import useGetGalleryPageData from "@/lib/hooks/useGetGalleryPageData";
 import { DataType } from "@/lib/redux/initialStates";
 import { Suspense } from "react";
 import { useSelector } from "react-redux";
@@ -13,7 +13,7 @@ interface RootState {
 }
 
 const Page = () => {
-  useGetPageData(Pages.GALLERY);
+  useGetGalleryPageData();
   const {
     data: [galleryImagesGrid],
   } = useSelector((state: RootState) => state.gallery);

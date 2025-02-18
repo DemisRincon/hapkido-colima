@@ -1,6 +1,6 @@
 "use client";
 import ButtonsScreen from "@/components/ButtonsScreen";
-import useGetPageData, { Pages } from "@/lib/hooks/useGetPageData";
+import useGetContactPageData from "@/lib/hooks/useGetContactPageData";
 import { DataType } from "@/lib/redux/initialStates";
 import React, { Suspense } from "react";
 import { useSelector } from "react-redux";
@@ -13,7 +13,7 @@ interface RootState {
 }
 
 const Page = () => {
-  useGetPageData(Pages.CONTACT);
+  useGetContactPageData();
   const {
     data: [contactButtons],
   } = useSelector((state: RootState) => state.contact);

@@ -8,6 +8,7 @@ import Article from "@/components/Article";
 import { DataType } from "@/lib/redux/initialStates";
 import SectionBanner from "@/components/SectionBanner";
 import ImagesGrid from "@/components/ImagesGrid";
+import useGetAboutPageData from "@/lib/hooks/useGetAboutPageData";
 
 interface RootState {
   about: {
@@ -17,7 +18,7 @@ interface RootState {
 }
 
 const Page = () => {
-  useGetPageData(Pages.ABOUT);
+  useGetAboutPageData();
   const {
     data: [
       HeroSideTopData,
