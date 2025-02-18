@@ -2,7 +2,6 @@
 import React, { Suspense } from "react";
 import { useSelector } from "react-redux";
 import LetterBanner from "@/components/LetterBanner";
-import useGetPageData, { Pages } from "@/lib/hooks/useGetPageData";
 import SectionSideImage from "@/components/SectionSideImage";
 import Article from "@/components/Article";
 import { DataType } from "@/lib/redux/initialStates";
