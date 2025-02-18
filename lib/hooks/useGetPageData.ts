@@ -86,6 +86,7 @@ const useGetPageData = (page: Pages) => {
         dispatch(pageData[page].setLoading());
         const res = await fetch(pageData[page].url, {
           signal: abortController.signal,
+          cache: "no-store",
         });
         if (!res.ok) {
           throw new Error(`Network response was not ok: ${res.statusText}`);
